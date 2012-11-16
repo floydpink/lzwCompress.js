@@ -150,6 +150,7 @@ test("string values", function () {
     compressionTest(JSON.stringify(obj2));
     compressionTest(JSON.stringify(obj3));
     compressionTest(JSON.stringify(obj4));
+    compressionTest(JSON.stringify(hugeJson));
 });
 
 test("objects", function () {
