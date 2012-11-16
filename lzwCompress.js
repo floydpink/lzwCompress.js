@@ -4,9 +4,10 @@ var lzwCompress = function (Array, JSON, undefined) {
         _lzwLog = function (message) {
             try {
                 console.log('lzwCompress: '
-                    + (new Date()).toISOString() + ' : ' + (typeof(message) === 'object'
-                    ? JSON.stringify(message)
-                    : message));
+                    + (new Date()).toISOString() + ' : ' +
+                    (typeof(message) === 'object'
+                        ? JSON.stringify(message)
+                        : message));
             } catch (e) {
             }
         };
