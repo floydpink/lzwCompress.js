@@ -33,3 +33,7 @@ Just so I could earn some bragging rights, please endorse me on coderwall!
 [![endorse](https://api.coderwall.com/floydpink/endorsecount.png)](https://coderwall.com/floydpink)
 
 [![githalytics.com alpha](https://cruel-carlota.gopagoda.com/4541ddc1e70a2e3c613155f536f461d4 "githalytics.com")](http://githalytics.com/floydpink/lzwCompress.js)
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/floydpink/lzwCompress.js/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
