@@ -1,4 +1,4 @@
-[lzwCompress.js] (http://floydpink.github.com/lzwCompress.js/ "Compress/Decompress your JS artifacts")
+[lzwCompress.js] (http://floydpink.github.com/lzwCompress.js/ "Compress/Decompress your JS artifacts") [![Build Status](https://secure.travis-ci.org/floydpink/lzwCompress.js.png?branch=master)](http://travis-ci.org/floydpink/lzwCompress.js)
 ==============
 
 Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
