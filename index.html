@@ -1,104 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <meta charset='utf-8'>
+  <head>
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen"/>
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print"/>
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
     <title>lzwCompress.js by floydpink</title>
-    <meta name="google-site-verification" content="b6EJoMvbiWMFIBl26jLt4tfotebvmFzlnPeK1T2-3vM" />
-    <!-- editing this in to try and publish the site again! -->
-</head>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-<body>
-<div id="container">
-    <div class="inner">
+  </head>
+  <body>
 
-        <header>
-            <h1>lzwCompress.js</h1>
+      <header>
+        <h1>lzwCompress.js</h1>
+        <p>Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.</p>
+      </header>
 
-            <h2>Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.</h2>
-        </header>
+      <div id="banner">
+        <span id="logo"></span>
 
-        <section id="downloads" class="clearfix">
-            <a href="https://github.com/floydpink/lzwCompress.js/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
-            <a href="https://github.com/floydpink/lzwCompress.js/tarball/master" id="download-tar-gz"
-               class="button"><span>Download .tar.gz</span></a>
-            <a href="https://github.com/floydpink/lzwCompress.js" id="view-on-github" class="button"><span>View on GitHub</span></a>
-        </section>
+        <a href="https://github.com/floydpink/lzwCompress.js" class="button fork"><strong>View On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://github.com/floydpink/lzwCompress.js/zipball/master" class="button">ZIP</a></li>
+            <li><a href="https://github.com/floydpink/lzwCompress.js/tarball/master" class="button">TAR</a></li>
+          </ul>
+        </div>
+      </div><!-- end banner -->
 
-        <hr>
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1>
+<a name="lzwcompressjs---" class="anchor" href="#lzwcompressjs---"><span class="octicon octicon-link"></span></a><a href="http://floydpink.github.com/lzwCompress.js/">lzwCompress.js</a> <a href="http://badge.fury.io/js/lzwcompress"><img src="https://badge.fury.io/js/lzwcompress.png" alt="NPM version"></a> <a href="http://travis-ci.org/floydpink/lzwCompress.js"><img src="https://secure.travis-ci.org/floydpink/lzwCompress.js.png?branch=master" alt="Build Status"></a> <a href="https://gemnasium.com/floydpink/lzwCompress.js"><img src="https://gemnasium.com/floydpink/lzwCompress.js.svg" alt="Dependency Status"></a>
+</h1>
 
-        <section id="main_content">
-            <h1>lzwCompress.js</h1>
+<p>Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.</p>
 
-            <p>Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects. </p>
+<h3>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h3>
 
-            <h3>Usage:</h3>
+<h4>
+<a name="node" class="anchor" href="#node"><span class="octicon octicon-link"></span></a>Node</h4>
 
-            <div class="highlight"><pre><span class="c1">// To compress anything from within JS</span>
-<span class="kd">var</span> <span class="nx">compressed</span> <span class="o">=</span> <span
-                        class="nx">lzwCompress</span><span class="p">.</span><span class="nx">pack</span><span
-                        class="p">(</span><span class="nx">humongousObj</span><span class="p">);</span>
+<p>Install lzwCompress from npm:</p>
+
+<pre><code>npm install lzwcompress
+</code></pre>
+
+<p>And then to use it in your node.js applications:</p>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">lzwCompress</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lzwcompress'</span><span class="p">);</span>
+
+<span class="p">...</span>
+
+<span class="c1">// To compress anything from within JS</span>
+<span class="kd">var</span> <span class="nx">compressed</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">pack</span><span class="p">(</span><span class="nx">humongousObj</span><span class="p">);</span>
+
+<span class="p">...</span>
 
 <span class="c1">// And to decompress it</span>
-<span class="kd">var</span> <span class="nx">original</span> <span class="o">=</span> <span
-                        class="nx">lzwCompress</span><span class="p">.</span><span class="nx">unpack</span><span
-                        class="p">(</span><span class="nx">compressed</span><span class="p">);</span>
-</pre>
-            </div>
+<span class="kd">var</span> <span class="nx">original</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">unpack</span><span class="p">(</span><span class="nx">compressed</span><span class="p">);</span>
+</pre></div>
 
-            <p>Applies LZW compression and JSON key optimization (if applicable) and makes JSON (or any javascript
-                object) smaller for local storage, for sending up to the server, etc.</p>
+<h4>
+<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h4>
 
-            <br/>
-            <br/>
+<p>Include lzwCompress.js as a script tag:</p>
 
-            <div>
-                <h4>The MIT License (MIT)</h4>
+<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"lzwCompress.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
 
-                <h5>Copyright (c) 2012 Haridas Pachuveetil</h5>
-                <hr>
-                <p><span class="license">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-                associated documentation files (the "Software"), to deal in the Software without restriction, including
-                without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-                copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the
-                following conditions:</span></p>
+<p>And then use it in your browser applications:</p>
 
-                <p><span class="license">The above copyright notice and this permission notice shall be included in all copies or substantial
-                portions of the Software.</span></p>
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">lzwCompress</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">lzwCompress</span><span class="p">;</span>
 
-                <p><span class="license">THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT
-                NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-                IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-                WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
-                SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</span></p></div>
-        </section>
+<span class="p">...</span>
 
-        <footer>
-            lzwCompress.js is maintained by <a href="https://github.com/floydpink">floydpink</a><br>
-            This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a
-                href="http://twitter.com/jasonlong">Jason Long</a>.
-        </footer>
+<span class="c1">// To compress anything from within JS</span>
+<span class="kd">var</span> <span class="nx">compressed</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">pack</span><span class="p">(</span><span class="nx">humongousObj</span><span class="p">);</span>
 
-        <script type="text/javascript">
+<span class="p">...</span>
+
+<span class="c1">// And to decompress it</span>
+<span class="kd">var</span> <span class="nx">original</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">unpack</span><span class="p">(</span><span class="nx">compressed</span><span class="p">);</span>
+</pre></div>
+
+<p>Applies LZW compression and JSON key optimization and makes JSON (or any javascript object) smaller for local storage, to ship up to the server etc.</p>
+
+<h3>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+
+<p>The MIT License (MIT)</p>
+
+<p>Copyright (c) 2012-2014 Haridas Pachuveetil</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.</p>
+
+<p>Just so I could earn some bragging rights, please endorse me on coderwall!</p>
+
+<p><a href="https://coderwall.com/floydpink"><img src="https://api.coderwall.com/floydpink/endorsecount.png" alt="endorse"></a></p>
+      </section>
+      <footer>
+        <p>Project maintained by <a href="https://github.com/floydpink">floydpink</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-        </script>
-        <script type="text/javascript">
+          </script>
+          <script type="text/javascript">
             try {
-                var pageTracker = _gat._getTracker("UA-36383654-1");
-                pageTracker._trackPageview();
-            } catch (err) {
-            }
-        </script>
+              var pageTracker = _gat._getTracker("UA-36383654-1");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
 
-    </div>
-</div>
-</body>
+  </body>
 </html>
