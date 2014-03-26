@@ -1,4 +1,4 @@
-[lzwCompress.js](http://floydpink.github.io/lzwCompress.js/) [![NPM version](https://badge.fury.io/js/lzwcompress.png)](http://badge.fury.io/js/lzwcompress) [![Build Status](https://secure.travis-ci.org/floydpink/lzwCompress.js.png?branch=master)](http://travis-ci.org/floydpink/lzwCompress.js) [![Dependency Status](https://gemnasium.com/floydpink/lzwCompress.js.svg)](https://gemnasium.com/floydpink/lzwCompress.js)
+[lzwCompress.js](http://floydpink.github.io/lzwCompress.js/) [![NPM version](https://badge.fury.io/js/lzwcompress.png)](http://badge.fury.io/js/lzwcompress) [![Build Status](https://travis-ci.org/floydpink/lzwCompress.js.svg?branch=master)](https://travis-ci.org/floydpink/lzwCompress.js) [![Dependency Status](https://gemnasium.com/floydpink/lzwCompress.js.svg)](https://gemnasium.com/floydpink/lzwCompress.js)
 ==============
 
 Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
