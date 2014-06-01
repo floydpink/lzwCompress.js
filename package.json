@@ -26,11 +26,11 @@
   },
   "homepage": "http://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
-    "grunt-contrib-jshint": "~0.9.2",
-    "grunt-contrib-nodeunit": "~0.3.3",
-    "grunt-contrib-watch": "~0.6.1",
-    "load-grunt-tasks": "~0.4.0",
-    "time-grunt": "^0.3.1",
-    "jshint-stylish": "~0.1.5"
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.4.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "jshint-stylish": "^0.2.0",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1"
   }
 }
