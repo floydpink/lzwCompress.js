@@ -16,7 +16,7 @@
         _lzwLog = function (message) {
           try {
             console.log('lzwCompress: ' +
-                (new Date()).toISOString() + ' : ' + (typeof(message) === 'object' ? JSON.stringify(message) : message));
+              (new Date()).toISOString() + ' : ' + (typeof(message) === 'object' ? JSON.stringify(message) : message));
           } catch (e) {
           }
         };
@@ -103,9 +103,6 @@
           },
           decompress = function (minifiedJson) {
             var obj = minifiedJson;
-            if (typeof(obj) !== 'object') {
-              obj = JSON.parse(minifiedJson);
-            }
             if (typeof(obj) !== 'object') {
               return minifiedJson;
             }
@@ -218,14 +215,16 @@
           if (!compressedObj || compressedObj === true || compressedObj instanceof Date) {
             return compressedObj;
           }
-          var result = _self.LZWCompress.unpack(compressedObj);
+          var probableJSON, result = _self.LZWCompress.unpack(compressedObj);
           try {
-            result = JSON.parse(result);
+            probableJSON = JSON.parse(result);
           } catch (e) {
             _lzwLoggingEnabled && _lzwLog('unpacked (uncompressed) : ' + result);
             return result;
           }
-          result = _self.KeyOptimize.unpack(result);
+          if (typeof probableJSON === 'object') {
+            result = _self.KeyOptimize.unpack(probableJSON);
+          }
           _lzwLoggingEnabled && _lzwLog('unpacked (uncompressed) : ' + result);
           return result;
         },

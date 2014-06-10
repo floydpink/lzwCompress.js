@@ -8,145 +8,161 @@
 'use strict';
 
 var obj1 = {
-  key1 : 2345,
-  key2 : 'this is a string',
-  key3 : [
-    {
-      key31 : 23.56,
-      key32 : 'this is another string',
-      key33 : 'null',
-      key34 : null,
-      key35 : true,
-      key36 : false,
-      key37 : 0
+      key1 : 2345,
+      key2 : 'this is a string',
+      key3 : [
+        {
+          key31 : 23.56,
+          key32 : 'this is another string',
+          key33 : 'null',
+          key34 : null,
+          key35 : true,
+          key36 : false,
+          key37 : 0
+        },
+        {
+          key31 : 4223.56,
+          key32 : 'this is yet another string',
+          key33 : 'jsCompress',
+          key34 : 567,
+          key35 : false,
+          key36 : true,
+          key37 : 1
+        }
+      ]
     },
-    {
-      key31 : 4223.56,
-      key32 : 'this is yet another string',
-      key33 : 'jsCompress',
-      key34 : 567,
-      key35 : false,
-      key36 : true,
-      key37 : 1
-    }
-  ]
-};
-var obj2 = [
-  {},
-  {}
-];
-var obj3 = {};
-var obj4 = [];
-
-var hugeJson = {
-  'web-app' : {
-    'servlet'         : [
+    obj2 = [
+      {},
+      {}
+    ],
+    obj3 = {},
+    array1 = [],
+    array2 = [
+      2, 3, 4, -1, 5
+    ],
+    array3 = ['test1', "test2", 23, {}],
+    array4 = [
       {
-        'servlet-name'  : 'cofaxCDS',
-        'servlet-class' : 'org.cofax.cds.CDSServlet',
-        'init-param'    : {
-          'configGlossary:installationAt' : 'Philadelphia, PA',
-          'configGlossary:adminEmail'     : 'ksm@pobox.com',
-          'configGlossary:poweredBy'      : 'Cofax',
-          'configGlossary:poweredByIcon'  : '/images/cofax.gif',
-          'configGlossary:staticPath'     : '/content/static',
-          'templateProcessorClass'        : 'org.cofax.WysiwygTemplate',
-          'templateLoaderClass'           : 'org.cofax.FilesTemplateLoader',
-          'templatePath'                  : 'templates',
-          'templateOverridePath'          : '',
-          'defaultListTemplate'           : 'listTemplate.htm',
-          'defaultFileTemplate'           : 'articleTemplate.htm',
-          'useJSP'                        : false,
-          'jspListTemplate'               : 'listTemplate.jsp',
-          'jspFileTemplate'               : 'articleTemplate.jsp',
-          'cachePackageTagsTrack'         : 200,
-          'cachePackageTagsStore'         : 200,
-          'cachePackageTagsRefresh'       : 60,
-          'cacheTemplatesTrack'           : 100,
-          'cacheTemplatesStore'           : 50,
-          'cacheTemplatesRefresh'         : 15,
-          'cachePagesTrack'               : 200,
-          'cachePagesStore'               : 100,
-          'cachePagesRefresh'             : 10,
-          'cachePagesDirtyRead'           : 10,
-          'searchEngineListTemplate'      : 'forSearchEnginesList.htm',
-          'searchEngineFileTemplate'      : 'forSearchEngines.htm',
-          'searchEngineRobotsDb'          : 'WEB-INF/robots.db',
-          'useDataStore'                  : true,
-          'dataStoreClass'                : 'org.cofax.SqlDataStore',
-          'redirectionClass'              : 'org.cofax.SqlRedirection',
-          'dataStoreName'                 : 'cofax',
-          'dataStoreDriver'               : 'com.microsoft.jdbc.sqlserver.SQLServerDriver',
-          'dataStoreUrl'                  : 'jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon',
-          'dataStoreUser'                 : 'sa',
-          'dataStorePassword'             : 'dataStoreTestQuery',
-          'dataStoreTestQuery'            : 'SET NOCOUNT ON;select test="test";',
-          'dataStoreLogFile'              : '/usr/local/tomcat/logs/datastore.log',
-          'dataStoreInitConns'            : 10,
-          'dataStoreMaxConns'             : 100,
-          'dataStoreConnUsageLimit'       : 100,
-          'dataStoreLogLevel'             : 'debug',
-          'maxUrlLength'                  : 500
-        }
+        id   : 1,
+        name : 'one'
       },
       {
-        'servlet-name'  : 'cofaxEmail',
-        'servlet-class' : 'org.cofax.cds.EmailServlet',
-        'init-param'    : {
-          'mailHost'         : 'mail1',
-          'mailHostOverride' : 'mail2'
-        }
+        id   : 2,
+        name : 'two'
       },
       {
-        'servlet-name'  : 'cofaxAdmin',
-        'servlet-class' : 'org.cofax.cds.AdminServlet'
-      },
-
-      {
-        'servlet-name'  : 'fileServlet',
-        'servlet-class' : 'org.cofax.cds.FileServlet'
-      },
-      {
-        'servlet-name'  : 'cofaxTools',
-        'servlet-class' : 'org.cofax.cms.CofaxToolsServlet',
-        'init-param'    : {
-          'templatePath'        : 'toolstemplates/',
-          'log'                 : 1,
-          'logLocation'         : '/usr/local/tomcat/logs/CofaxTools.log',
-          'logMaxSize'          : '',
-          'dataLog'             : 1,
-          'dataLogLocation'     : '/usr/local/tomcat/logs/dataLog.log',
-          'dataLogMaxSize'      : '',
-          'removePageCache'     : '/content/admin/remove?cache=pages&id=',
-          'removeTemplateCache' : '/content/admin/remove?cache=templates&id=',
-          'fileTransferFolder'  : '/usr/local/tomcat/webapps/content/fileTransferFolder',
-          'lookInContext'       : 1,
-          'adminGroupID'        : 4,
-          'betaServer'          : true
-        }
+        id   : 3,
+        name : 'three'
       }
     ],
-    'servlet-mapping' : {
-      'cofaxCDS'    : '/',
-      'cofaxEmail'  : '/cofaxutil/aemail/*',
-      'cofaxAdmin'  : '/admin/*',
-      'fileServlet' : '/static/*',
-      'cofaxTools'  : '/tools/*'
+    hugeJson = {
+      'web-app' : {
+        'servlet'         : [
+          {
+            'servlet-name'  : 'cofaxCDS',
+            'servlet-class' : 'org.cofax.cds.CDSServlet',
+            'init-param'    : {
+              'configGlossary:installationAt' : 'Philadelphia, PA',
+              'configGlossary:adminEmail'     : 'ksm@pobox.com',
+              'configGlossary:poweredBy'      : 'Cofax',
+              'configGlossary:poweredByIcon'  : '/images/cofax.gif',
+              'configGlossary:staticPath'     : '/content/static',
+              'templateProcessorClass'        : 'org.cofax.WysiwygTemplate',
+              'templateLoaderClass'           : 'org.cofax.FilesTemplateLoader',
+              'templatePath'                  : 'templates',
+              'templateOverridePath'          : '',
+              'defaultListTemplate'           : 'listTemplate.htm',
+              'defaultFileTemplate'           : 'articleTemplate.htm',
+              'useJSP'                        : false,
+              'jspListTemplate'               : 'listTemplate.jsp',
+              'jspFileTemplate'               : 'articleTemplate.jsp',
+              'cachePackageTagsTrack'         : 200,
+              'cachePackageTagsStore'         : 200,
+              'cachePackageTagsRefresh'       : 60,
+              'cacheTemplatesTrack'           : 100,
+              'cacheTemplatesStore'           : 50,
+              'cacheTemplatesRefresh'         : 15,
+              'cachePagesTrack'               : 200,
+              'cachePagesStore'               : 100,
+              'cachePagesRefresh'             : 10,
+              'cachePagesDirtyRead'           : 10,
+              'searchEngineListTemplate'      : 'forSearchEnginesList.htm',
+              'searchEngineFileTemplate'      : 'forSearchEngines.htm',
+              'searchEngineRobotsDb'          : 'WEB-INF/robots.db',
+              'useDataStore'                  : true,
+              'dataStoreClass'                : 'org.cofax.SqlDataStore',
+              'redirectionClass'              : 'org.cofax.SqlRedirection',
+              'dataStoreName'                 : 'cofax',
+              'dataStoreDriver'               : 'com.microsoft.jdbc.sqlserver.SQLServerDriver',
+              'dataStoreUrl'                  : 'jdbc:microsoft:sqlserver://LOCALHOST:1433;DatabaseName=goon',
+              'dataStoreUser'                 : 'sa',
+              'dataStorePassword'             : 'dataStoreTestQuery',
+              'dataStoreTestQuery'            : 'SET NOCOUNT ON;select test="test";',
+              'dataStoreLogFile'              : '/usr/local/tomcat/logs/datastore.log',
+              'dataStoreInitConns'            : 10,
+              'dataStoreMaxConns'             : 100,
+              'dataStoreConnUsageLimit'       : 100,
+              'dataStoreLogLevel'             : 'debug',
+              'maxUrlLength'                  : 500
+            }
+          },
+          {
+            'servlet-name'  : 'cofaxEmail',
+            'servlet-class' : 'org.cofax.cds.EmailServlet',
+            'init-param'    : {
+              'mailHost'         : 'mail1',
+              'mailHostOverride' : 'mail2'
+            }
+          },
+          {
+            'servlet-name'  : 'cofaxAdmin',
+            'servlet-class' : 'org.cofax.cds.AdminServlet'
+          },
+
+          {
+            'servlet-name'  : 'fileServlet',
+            'servlet-class' : 'org.cofax.cds.FileServlet'
+          },
+          {
+            'servlet-name'  : 'cofaxTools',
+            'servlet-class' : 'org.cofax.cms.CofaxToolsServlet',
+            'init-param'    : {
+              'templatePath'        : 'toolstemplates/',
+              'log'                 : 1,
+              'logLocation'         : '/usr/local/tomcat/logs/CofaxTools.log',
+              'logMaxSize'          : '',
+              'dataLog'             : 1,
+              'dataLogLocation'     : '/usr/local/tomcat/logs/dataLog.log',
+              'dataLogMaxSize'      : '',
+              'removePageCache'     : '/content/admin/remove?cache=pages&id=',
+              'removeTemplateCache' : '/content/admin/remove?cache=templates&id=',
+              'fileTransferFolder'  : '/usr/local/tomcat/webapps/content/fileTransferFolder',
+              'lookInContext'       : 1,
+              'adminGroupID'        : 4,
+              'betaServer'          : true
+            }
+          }
+        ],
+        'servlet-mapping' : {
+          'cofaxCDS'    : '/',
+          'cofaxEmail'  : '/cofaxutil/aemail/*',
+          'cofaxAdmin'  : '/admin/*',
+          'fileServlet' : '/static/*',
+          'cofaxTools'  : '/tools/*'
+        },
+        'taglib'          : {
+          'taglib-uri'      : 'cofax.tld',
+          'taglib-location' : '/WEB-INF/tlds/cofax.tld'
+        }
+      }
     },
-    'taglib'          : {
-      'taglib-uri'      : 'cofax.tld',
-      'taglib-location' : '/WEB-INF/tlds/cofax.tld'
-    }
-  }
-};
+    lzwCompress = require('../lzwCompress'),
+    compressionTest = function (test, obj) {
+      var packedObject = lzwCompress.pack(obj);
+      test.deepEqual(lzwCompress.unpack(packedObject), obj, 'Compress > Uncompress test for ' + typeof(obj));
+    };
 
-var lzwCompress = require('../lzwCompress');
 //lzwCompress.enableLogging(true);
-
-var compressionTest = function (test, obj) {
-  var packedObject = lzwCompress.pack(obj);
-  test.deepEqual(lzwCompress.unpack(packedObject), obj, 'Compress > Uncompress test for ' + typeof(obj));
-};
 
 exports.lzwCompress = {
   'simple types'  : function (test) {
@@ -168,22 +184,31 @@ exports.lzwCompress = {
     test.done();
   },
   'string values' : function (test) {
-    test.expect(7);
+    test.expect(9);
     compressionTest(test, 'lzwCompress.js');
     compressionTest(test, '\u2308\u0156asdlmasd;\'"klslmlsd:&%$#@_098*');
     compressionTest(test, JSON.stringify(obj1));
     compressionTest(test, JSON.stringify(obj2));
     compressionTest(test, JSON.stringify(obj3));
-    compressionTest(test, JSON.stringify(obj4));
+    compressionTest(test, JSON.stringify(array1));
     compressionTest(test, JSON.stringify(hugeJson));
+    compressionTest(test, '""');  // issue #1 - https://github.com/floydpink/lzwCompress.js/issues/1
+    compressionTest(test, '"{\\"abnabnabn\\":\\"asd\\"}"'); // issue #1 - https://github.com/floydpink/lzwCompress.js/issues/1
+    test.done();
+  },
+  'arrays'        : function (test) {
+    test.expect(4);
+    compressionTest(test, array1);
+    compressionTest(test, array2);
+    compressionTest(test, array3);
+    compressionTest(test, array4);
     test.done();
   },
   'objects'       : function (test) {
-    test.expect(4);
+    test.expect(3);
     compressionTest(test, obj1);
     compressionTest(test, obj2);
     compressionTest(test, obj3);
-    compressionTest(test, obj4);
     test.done();
   },
   'huge json'     : function (test) {
