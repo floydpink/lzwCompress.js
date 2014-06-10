@@ -31,6 +31,6 @@
     "grunt-contrib-watch": "^0.6.1",
     "jshint-stylish": "^0.2.0",
     "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
+    "time-grunt": "^0.3.2"
   }
 }
