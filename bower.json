@@ -1,0 +1,30 @@
+{
+  "name": "lzwCompress.js",
+  "main": "lzwCompress.js",
+  "version": "0.1.2",
+  "homepage": "http://floydpink.github.io/lzwCompress.js/",
+  "authors": [
+    "Floyd Pink <imbleedingme@googlemail.com>"
+  ],
+  "description": "Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "lzw",
+    "lzw compress",
+    "compress",
+    "JSON"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "Gruntfile.js",
+    "*.json"
+  ]
+}
