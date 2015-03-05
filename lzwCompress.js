@@ -24,20 +24,6 @@
     // KeyOptimize
     // http://stackoverflow.com/questions/4433402/replace-keys-json-in-javascript
     (function (self, Array, JSON) {
-      // http://stackoverflow.com/questions/1988349/array-push-if-does-not-exist
-      Array.prototype.inArray = function (comparer) {
-        for (var i = 0; i < this.length; i++) {
-          if (comparer(this[i])) {
-            return true;
-          }
-        }
-        return false;
-      };
-      Array.prototype.pushNew = function (element, comparer) {
-        if (!this.inArray(comparer)) {
-          this.push(element);
-        }
-      };
 
       var _keys = [],
           comparer = function (key) {
@@ -45,11 +31,24 @@
               return e === key;
             };
           },
+          inArray = function (array,comparer) {
+            for (var i = 0; i < array.length; i++) {
+              if (comparer(array[i])) {
+                return true;
+              }
+            }
+            return false;
+          },
+          pushNew = function (array,element, comparer) {
+            if (!inArray(array,comparer)) {
+              array.push(element);
+            }
+          },
           _extractKeys = function (obj) {
             if (typeof obj === 'object') {
               for (var key in obj) {
                 if (!Array.isArray(obj)) {
-                  _keys.pushNew(key, comparer(key));
+                  pushNew(_keys,key, comparer(key));
                 }
                 _extractKeys(obj[key]);
               }
@@ -84,12 +83,6 @@
               } else {
                 obj[prop] = _decode(obj[prop]);
               }
-            }
-            if (obj && Array.isArray(obj) && obj.inArray && typeof obj.inArray === 'function') {
-              delete obj.inArray;
-            }
-            if (obj && Array.isArray(obj) && obj.pushNew && typeof obj.pushNew === 'function') {
-              delete obj.pushNew;
             }
             return obj;
           },
