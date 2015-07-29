@@ -1,5 +1,7 @@
-[lzwCompress.js](http://floydpink.github.io/lzwCompress.js/) [![NPM version](https://badge.fury.io/js/lzwcompress.png)](http://badge.fury.io/js/lzwcompress) [![Bower version](https://badge.fury.io/bo/lzwcompress.svg)](http://badge.fury.io/bo/lzwcompress) [![Build Status](https://travis-ci.org/floydpink/lzwCompress.js.svg?branch=master)](https://travis-ci.org/floydpink/lzwCompress.js) [![Dependency Status](https://gemnasium.com/floydpink/lzwCompress.js.svg)](https://gemnasium.com/floydpink/lzwCompress.js)
+[lzwCompress.js](http://floydpink.github.io/lzwCompress.js/)
 ==============
+
+[![npm](https://img.shields.io/npm/v/lzwcompress.svg)](https://www.npmjs.com/package/lzwcompress) [![Travis](https://img.shields.io/travis/floydpink/lzwCompress.js.svg)](https://travis-ci.org/floydpink/lzwCompress.js) [![Code Climate](https://img.shields.io/codeclimate/github/floydpink/lzwCompress.js.svg)](https://codeclimate.com/github/floydpink/lzwCompress.js) [![Code Climate](https://img.shields.io/codeclimate/coverage/github/floydpink/lzwCompress.js.svg)](https://codeclimate.com/github/floydpink/lzwCompress.js) [![David](https://img.shields.io/david/dev/floydpink/lzwCompress.js.svg)](https://david-dm.org/floydpink/lzwCompress.js#info=devDependencies&view=table)
 
 Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
 
