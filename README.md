@@ -33,7 +33,13 @@ var original = lzwCompress.unpack(compressed);
 
 #### Browser
 
-Include lzwCompress.js as a script tag:
+Install lzwCompress from npm:
+
+```
+bower install --save lzwCompress.js
+```
+
+Then include lzwCompress.js using a script tag in your HTML:
 
 ```html
 <script src="lzwCompress.js"></script>
@@ -60,7 +66,3 @@ Applies LZW compression and JSON key optimization and makes JSON (or any javascr
 ### License
 
 [MIT License](LICENSE)
-
-Just so I could earn some bragging rights, please endorse me on coderwall!
-
-[![endorse](https://api.coderwall.com/floydpink/endorsecount.png)](https://coderwall.com/floydpink)

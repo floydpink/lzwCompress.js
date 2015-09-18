@@ -1,6 +1,6 @@
 {
   "name": "lzwcompress",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.",
   "main": "lzwCompress.js",
   "directories": {
@@ -26,7 +26,7 @@
   },
   "homepage": "http://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
-    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-watch": "^0.6.1",
     "jshint-stylish": "^2.0.1",
