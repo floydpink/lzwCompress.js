@@ -36,7 +36,7 @@ var original = lzwCompress.unpack(compressed);
 Install lzwCompress from npm:
 
 ```
-bower install --save lzwCompress.js
+bower install --save lzwcompress
 ```
 
 Then include lzwCompress.js using a script tag in your HTML:
