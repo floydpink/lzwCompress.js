@@ -8,6 +8,8 @@ node_js:
   - '5.0'
 before_script:
   - npm install -g grunt-cli
+script:
+  - grunt ci
 after_success:
   # If build is successful, generate test coverage and push it to code climate
   - if [ "$TRAVIS_NODE_VERSION" = "0.12" ]; then ./codeclimate.sh; fi
