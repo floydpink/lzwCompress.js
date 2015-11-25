@@ -29,8 +29,8 @@
     "grunt-contrib-jshint": "^0.11.3",
     "grunt-contrib-nodeunit": "^0.4.1",
     "grunt-contrib-watch": "^0.6.1",
-    "jshint-stylish": "^2.0.1",
+    "jshint-stylish": "^2.1.0",
     "load-grunt-tasks": "^3.3.0",
-    "time-grunt": "^1.2.1"
+    "time-grunt": "^1.2.2"
   }
 }
