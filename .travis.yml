@@ -5,9 +5,8 @@ addons:
 node_js:
   - 'stable'
 before_script:
-  - npm install -g grunt-cli
+  - 'npm install -g grunt-cli codeclimate-test-reporter'
 script:
   - grunt ci
 after_success:
-  # If build is successful, generate test coverage and push it to code climate
-  - if [ "$TRAVIS_NODE_VERSION" = "0.12" ]; then ./codeclimate.sh; fi
+  - 'codeclimate-test-reporter < coverage/lcov.info'
