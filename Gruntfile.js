@@ -19,15 +19,14 @@ module.exports = function (grunt) {
     karma  : {
       options    : {
         configFile : 'test/karma.conf.js',
-        port       : 9999,
-        browsers  : ['PhantomJS']
+        port       : 9999
       },
       continuous : {
-        singleRun : true,
-        browsers  : ['PhantomJS']
+        singleRun : true
       },
       dev        : {
-        reporters : 'dots'
+        reporters : 'dots',
+        browsers  : ['PhantomJS']
       }
     },
     jshint : {

@@ -6,6 +6,33 @@
 module.exports = function (config) {
   'use strict';
 
+  if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
+    console.error('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.');
+  }
+
+  // Browsers to run on Sauce Labs
+  // Check out https://saucelabs.com/platforms for all browser/OS combos
+  var customLaunchers = {
+    'SL_Chrome'  : {
+      base        : 'SauceLabs',
+      platform    : 'OS X 10.11',
+      browserName : 'chrome',
+      customData  : {
+        awesome : true
+      }
+    },
+    'SL_Firefox' : {
+      base        : 'SauceLabs',
+      platform    : 'OS X 10.11',
+      browserName : 'firefox'
+    },
+    'SL_Edge'    : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'microsoftedge'
+    }
+  };
+
   config.set({
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch : true,
@@ -43,9 +70,7 @@ module.exports = function (config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers : [
-      "PhantomJS"
-    ],
+    browsers : Object.keys(customLaunchers),
 
     // Which plugins to enable
     plugins : [
@@ -64,7 +89,7 @@ module.exports = function (config) {
 
     // level of logging
     // possible values: LOG_DISABLE || LOG_ERROR || LOG_WARN || LOG_INFO || LOG_DEBUG
-    logLevel : config.LOG_INFO,
+    logLevel : config.LOG_DEBUG,
 
     // Uncomment the following lines if you are using grunt's server to run the tests
     // proxies: {
@@ -74,7 +99,7 @@ module.exports = function (config) {
     // urlRoot: '_karma_'
 
     // coverage reporter generates the coverage
-    reporters : ['spec', 'coverage'],
+    reporters : ['spec', 'coverage', 'saucelabs'],
 
     specReporter : {maxLogLines : 10},
 
@@ -84,6 +109,20 @@ module.exports = function (config) {
       // (these files will be instrumented by Istanbul)
       'lzwCompress.js' : ['coverage']
     },
+
+    // Sauce Labs config
+    sauceLabs       : {
+      testName          : 'lzwCompress.js on Sauce Labs',
+      recordScreenshots : false,
+      connectOptions    : {
+        port    : 5757,
+        logfile : 'sauce_connect.log'
+      },
+      public            : 'public'
+    },
+    // Increase timeout in case connection in CI is slow
+    captureTimeout  : 120000,
+    customLaunchers : customLaunchers,
 
     // configure the reporter
     coverageReporter : {

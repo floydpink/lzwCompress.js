@@ -1,10 +1,11 @@
 sudo: false
 language: node_js
+addons:
+  sauce_connect: true
 node_js:
-  - 'iojs'
-  - '0.10'
   - '0.12'
   - '4.0'
+  - '5.0'
 before_script:
   - npm install -g grunt-cli
 after_success:
