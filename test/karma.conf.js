@@ -13,23 +13,77 @@ module.exports = function (config) {
   // Browsers to run on Sauce Labs
   // Check out https://saucelabs.com/platforms for all browser/OS combos
   var customLaunchers = {
-    'SL_Chrome'  : {
+    'SL_OSX_Chrome'      : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
-      browserName : 'chrome',
-      customData  : {
-        awesome : true
-      }
+      browserName : 'chrome'
     },
-    'SL_Firefox' : {
+    'SL_OSX_Safari'      : {
+      base        : 'SauceLabs',
+      platform    : 'OS X 10.11',
+      browserName : 'safari'
+    },
+    'SL_OSX_Firefox'     : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
       browserName : 'firefox'
     },
-    'SL_Edge'    : {
+    'SL_Win_Edge'        : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'microsoftedge'
+    },
+    'SL_Win_IE11'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 8.1',
+      browserName : 'internet explorer',
+      version     : '11.0'
+    },
+    'SL_Win_IE10'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 7',
+      browserName : 'internet explorer',
+      version     : '10.0'
+    },
+    'SL_Win_IE9'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 7',
+      browserName : 'internet explorer',
+      version     : '9.0'
+    },
+    'SL_Win_IE8'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows XP',
+      browserName : 'internet explorer',
+      version     : '8.0'
+    },
+    'SL_Win_Chrome'      : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'chrome'
+    },
+    'SL_Win_Firefox'     : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'firefox'
+    },
+    'SL_iOS_Safari'      : {
+      base        : 'SauceLabs',
+      platform    : 'OS X 10.10',
+      browserName : 'iPhone',
+      version     : '9.1',
+      customData  : {
+        deviceName : 'iPhone 6 Plus'
+      }
+    },
+    'SL_Android_Android' : {
+      base        : 'SauceLabs',
+      platform    : 'Linux',
+      browserName : 'android',
+      version     : '5.1',
+      customData  : {
+        deviceName : 'Android Emulator'
+      }
     }
   };
 
