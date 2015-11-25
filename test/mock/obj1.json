@@ -1,0 +1,24 @@
+{
+  "key1": 2345,
+  "key2": "this is a string",
+  "key3": [
+    {
+      "key31": 23.56,
+      "key32": "this is another string",
+      "key33": "null",
+      "key34": null,
+      "key35": true,
+      "key36": false,
+      "key37": 0
+    },
+    {
+      "key31": 4223.56,
+      "key32": "this is yet another string",
+      "key33": "jsCompress",
+      "key34": 567,
+      "key35": false,
+      "key36": true,
+      "key37": 1
+    }
+  ]
+}

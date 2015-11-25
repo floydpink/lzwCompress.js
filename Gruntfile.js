@@ -15,11 +15,22 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg      : grunt.file.readJSON('package.json'),
-    nodeunit : {
-      files : ['test/**/*_test.js']
+    pkg    : grunt.file.readJSON('package.json'),
+    karma  : {
+      options    : {
+        configFile : 'test/karma.conf.js',
+        port       : 9999,
+        browsers  : ['PhantomJS']
+      },
+      continuous : {
+        singleRun : true,
+        browsers  : ['PhantomJS']
+      },
+      dev        : {
+        reporters : 'dots'
+      }
     },
-    jshint   : {
+    jshint : {
       options   : {
         jshintrc : '.jshintrc',
         reporter : require('jshint-stylish')
@@ -34,14 +45,14 @@ module.exports = function (grunt) {
         src : ['test/**/*.js']
       }
     },
-    watch    : {
+    watch  : {
       gruntfile : {
         files : '<%= jshint.gruntfile.src %>',
         tasks : ['jshint:gruntfile']
       },
       lib       : {
         files : '<%= jshint.lib.src %>',
-        tasks : ['jshint:lib', 'nodeunit']
+        tasks : ['jshint:lib', 'karma:continuous']
       },
       test      : {
         files : '<%= jshint.test.src %>',
@@ -51,5 +62,8 @@ module.exports = function (grunt) {
   });
 
   // Default task.
-  grunt.registerTask('default', ['jshint', 'nodeunit']);
+  grunt.registerTask('default', ['jshint', 'karma:dev']);
+
+  // CI task
+  grunt.registerTask('ci', ['jshint', 'karma:continuous']);
 };
