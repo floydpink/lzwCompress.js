@@ -76,7 +76,7 @@
             }
             for (var prop in obj) {
               if (!Array.isArray(obj)) {
-                if (obj.hasOwnProperty(prop)) {
+                if (obj.hasOwnProperty(prop) && _keys[prop]) {
                   obj[_keys[prop]] = _decode(obj[prop]);
                   delete obj[prop];
                 }
