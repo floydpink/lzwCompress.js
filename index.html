@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>lzwCompress.js by floydpink</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <link rel="stylesheet" href="stylesheets/github-dark.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script src="javascripts/main.js"></script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="google-site-verification" content="-m4jR59tpUeTHifU8C6nXBSKCigdFZmiZ3GgtT0Kaz0" />
 
   </head>
   <body>
@@ -41,16 +40,18 @@
       </nav>
       <section>
         <h1>
-<a name="lzwcompressjs---" class="anchor" href="#lzwcompressjs---"><span class="octicon octicon-link"></span></a><a href="http://floydpink.github.io/lzwCompress.js/">lzwCompress.js</a> <a href="http://badge.fury.io/js/lzwcompress"><img src="https://badge.fury.io/js/lzwcompress.png" alt="NPM version"></a> <a href="https://travis-ci.org/floydpink/lzwCompress.js"><img src="https://travis-ci.org/floydpink/lzwCompress.js.svg?branch=master" alt="Build Status"></a> <a href="https://gemnasium.com/floydpink/lzwCompress.js"><img src="https://gemnasium.com/floydpink/lzwCompress.js.svg" alt="Dependency Status"></a>
+<a id="lzwcompressjs" class="anchor" href="#lzwcompressjs" aria-hidden="true"><span class="octicon octicon-link"></span></a><a href="http://floydpink.github.io/lzwCompress.js/">lzwCompress.js</a>
 </h1>
+
+<p><a href="https://www.npmjs.com/package/lzwcompress"><img src="https://img.shields.io/npm/v/lzwcompress.svg" alt="npm"></a> <a href="https://travis-ci.org/floydpink/lzwCompress.js"><img src="https://img.shields.io/travis/floydpink/lzwCompress.js.svg" alt="Travis"></a> <a href="https://codeclimate.com/github/floydpink/lzwCompress.js/code"><img src="https://img.shields.io/codeclimate/github/floydpink/lzwCompress.js.svg" alt="Code Climate"></a> <a href="https://codeclimate.com/github/floydpink/lzwCompress.js/coverage"><img src="https://img.shields.io/codeclimate/coverage/github/floydpink/lzwCompress.js.svg" alt="Code Climate"></a> <a href="https://david-dm.org/floydpink/lzwCompress.js#info=devDependencies&amp;view=table"><img src="https://img.shields.io/david/dev/floydpink/lzwCompress.js.svg" alt="David"></a></p>
 
 <p>Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.</p>
 
 <h3>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage:</h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage:</h3>
 
 <h4>
-<a name="node" class="anchor" href="#node"><span class="octicon octicon-link"></span></a>Node</h4>
+<a id="node" class="anchor" href="#node" aria-hidden="true"><span class="octicon octicon-link"></span></a>Node</h4>
 
 <p>Install lzwCompress from npm:</p>
 
@@ -59,52 +60,50 @@
 
 <p>And then to use it in your node.js applications:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">lzwCompress</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">'lzwcompress'</span><span class="p">);</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> lzwCompress <span class="pl-k">=</span> <span class="pl-c1">require</span>(<span class="pl-s"><span class="pl-pds">'</span>lzwcompress<span class="pl-pds">'</span></span>);
 
-<span class="p">...</span>
+...
 
-<span class="c1">// To compress anything from within JS</span>
-<span class="kd">var</span> <span class="nx">compressed</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">pack</span><span class="p">(</span><span class="nx">humongousObj</span><span class="p">);</span>
+<span class="pl-c">// To compress anything from within JS</span>
+<span class="pl-k">var</span> compressed <span class="pl-k">=</span> <span class="pl-smi">lzwCompress</span>.<span class="pl-en">pack</span>(humongousObj);
 
-<span class="p">...</span>
+...
 
-<span class="c1">// And to decompress it</span>
-<span class="kd">var</span> <span class="nx">original</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">unpack</span><span class="p">(</span><span class="nx">compressed</span><span class="p">);</span>
-</pre></div>
+<span class="pl-c">// And to decompress it</span>
+<span class="pl-k">var</span> original <span class="pl-k">=</span> <span class="pl-smi">lzwCompress</span>.<span class="pl-en">unpack</span>(compressed);</pre></div>
 
 <h4>
-<a name="browser" class="anchor" href="#browser"><span class="octicon octicon-link"></span></a>Browser</h4>
+<a id="browser" class="anchor" href="#browser" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser</h4>
 
-<p>Include lzwCompress.js as a script tag:</p>
+<p>Install lzwCompress from npm:</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"lzwCompress.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
+<pre><code>bower install --save lzwcompress
+</code></pre>
+
+<p>Then include lzwCompress.js using a script tag in your HTML:</p>
+
+<div class="highlight highlight-text-html-basic"><pre>&lt;<span class="pl-ent">script</span> <span class="pl-e">src</span>=<span class="pl-s"><span class="pl-pds">"</span>lzwCompress.js<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">script</span>&gt;</pre></div>
 
 <p>And then use it in your browser applications:</p>
 
-<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">lzwCompress</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">lzwCompress</span><span class="p">;</span>
+<div class="highlight highlight-source-js"><pre><span class="pl-k">var</span> lzwCompress <span class="pl-k">=</span> <span class="pl-smi">window</span>.<span class="pl-smi">lzwCompress</span>;
 
-<span class="p">...</span>
+...
 
-<span class="c1">// To compress anything from within JS</span>
-<span class="kd">var</span> <span class="nx">compressed</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">pack</span><span class="p">(</span><span class="nx">humongousObj</span><span class="p">);</span>
+<span class="pl-c">// To compress anything from within JS</span>
+<span class="pl-k">var</span> compressed <span class="pl-k">=</span> <span class="pl-smi">lzwCompress</span>.<span class="pl-en">pack</span>(humongousObj);
 
-<span class="p">...</span>
+...
 
-<span class="c1">// And to decompress it</span>
-<span class="kd">var</span> <span class="nx">original</span> <span class="o">=</span> <span class="nx">lzwCompress</span><span class="p">.</span><span class="nx">unpack</span><span class="p">(</span><span class="nx">compressed</span><span class="p">);</span>
-</pre></div>
+<span class="pl-c">// And to decompress it</span>
+<span class="pl-k">var</span> original <span class="pl-k">=</span> <span class="pl-smi">lzwCompress</span>.<span class="pl-en">unpack</span>(compressed);</pre></div>
 
 <p>Applies LZW compression and JSON key optimization and makes JSON (or any javascript object) smaller for local storage, to ship up to the server etc.</p>
 
 <h3>
-<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h3>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span class="octicon octicon-link"></span></a>License</h3>
 
-<p><a href="LICENSE">MIT License</a></p>
-
-<p>Just so I could earn some bragging rights, please endorse me on coderwall!</p>
-
-<p><a href="https://coderwall.com/floydpink"><img src="https://api.coderwall.com/floydpink/endorsecount.png" alt="endorse"></a></p>
+<p><a href="https://github.com/floydpink/lzwCompress.js/blob/master/LICENSE">MIT License</a></p>
       </section>
       <footer>
         <p>Project maintained by <a href="https://github.com/floydpink">floydpink</a></p>
