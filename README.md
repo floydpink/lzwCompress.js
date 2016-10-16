@@ -63,6 +63,46 @@ var compressed = lzwCompress.pack(humongousObj);
 var original = lzwCompress.unpack(compressed);
 ```
 
+#### Angular / Browserify
+
+Install lzwCompress from npm:
+
+```
+npm install --save lzwcompress
+```
+
+Update package.json:
+
+```json
+"browser": {    
+    "lzwcompress": "./node_modules/lzwcompress/angular-lzwcompress.js"
+  }
+```
+
+Add a dependency to your angular module:
+
+```javascript
+var app = angular.module('MyModule', [    
+    require('lzwcompress');
+]);
+```
+
+Use it:
+```javascript
+app.service('MyService',function($http,lzw) {
+    return {
+        fetchData: function (id) {			
+			 return $http.get(ENV.API_URL + '/id')
+                        .then(function (result) {
+                          // to decompress anything from within JS
+                    	    return lzw.unpack(result);
+                    	    // to compress it
+                    	    return lzw.pack(result);   
+                    });                    
+        }
+    }
+});
+```
 Applies LZW compression and JSON key optimization and makes JSON (or any javascript object) smaller for local storage, to ship up to the server etc.
 
 ### License
