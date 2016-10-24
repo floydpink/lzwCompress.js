@@ -63,6 +63,9 @@ var compressed = lzwCompress.pack(humongousObj);
 var original = lzwCompress.unpack(compressed);
 ```
 
+For  use in an Angular 1 project see [angular-lzwcompress](https://github.com/aengus1/angular-lzwcompress)
+
+
 Applies LZW compression and JSON key optimization and makes JSON (or any javascript object) smaller for local storage, to ship up to the server etc.
 
 ### License
