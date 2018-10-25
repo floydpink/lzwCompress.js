@@ -2123,8 +2123,8 @@ karma-jasmine-jquery@^0.1.1:
     bower-installer "git://github.com/bessdsv/bower-installer.git#temp"
 
 karma-jasmine@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-1.0.2.tgz#c0b3ab327bf207db60e17fa27db37cfdef5d8e6c"
+  version "1.1.2"
+  resolved "https://registry.yarnpkg.com/karma-jasmine/-/karma-jasmine-1.1.2.tgz#394f2b25ffb4a644b9ada6f22d443e2fd08886c3"
 
 karma-phantomjs-launcher@^1.0.2:
   version "1.0.2"
