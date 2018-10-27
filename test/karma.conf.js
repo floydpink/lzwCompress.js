@@ -239,10 +239,6 @@ module.exports = function (config) {
     sauceLabs       : {
       testName          : 'lzwCompress.js on Sauce Labs',
       recordScreenshots : false,
-      connectOptions    : {
-        port    : 5757,
-        logfile : 'sauce_connect.log'
-      },
       public            : 'public'
     },
     // Increase timeout in case connection in CI is slow
