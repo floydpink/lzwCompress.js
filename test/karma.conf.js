@@ -233,6 +233,8 @@ module.exports = function (config) {
     sauceLabs       : {
       testName          : 'lzwCompress.js on Sauce Labs',
       recordScreenshots : false,
+      tunnelIdentifier  : process.env.TRAVIS_JOB_NUMBER,
+      startConnect      : false,
       public            : 'public'
     },
     // Increase timeout in case connection in CI is slow
