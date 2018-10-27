@@ -16,27 +16,27 @@ module.exports = function (config) {
   // Browsers to run on Sauce Labs
   // Check out https://saucelabs.com/platforms for all browser/OS combos
   var customLaunchers = {
-    'sl_macOS_High_Sierra_Chrome'      : {
+    'sl_macOS_High_Sierra_Chrome'  : {
       base        : 'SauceLabs',
       platform    : 'macOS 10.13',
       browserName : 'Chrome'
     },
-    'sl_macOS_High_Sierra_Safari'      : {
+    'sl_macOS_High_Sierra_Safari'  : {
       base        : 'SauceLabs',
       platform    : 'macOS 10.13',
       browserName : 'Safari'
     },
-    'sl_macOS_High_Sierra_Firefox'      : {
+    'sl_macOS_High_Sierra_Firefox' : {
       base        : 'SauceLabs',
       platform    : 'macOS 10.13',
       browserName : 'Firefox'
     },
-    'sl_macOS_Sierra_Chrome'      : {
+    'sl_macOS_Sierra_Chrome'       : {
       base        : 'SauceLabs',
       platform    : 'macOS 10.12',
       browserName : 'Chrome'
     },
-    'sl_macOS_Sierra_Safari'      : {
+    'sl_macOS_Sierra_Safari'       : {
       base        : 'SauceLabs',
       platform    : 'macOS 10.12',
       browserName : 'Safari'
@@ -46,105 +46,105 @@ module.exports = function (config) {
       platform    : 'macOS 10.12',
       browserName : 'Firefox'
     },
-    'sl_OSX_El_Capitan_Chrome'      : {
+    'sl_OSX_El_Capitan_Chrome'     : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
       browserName : 'Chrome'
     },
-    'sl_OSX_El_Capitan_Safari'      : {
+    'sl_OSX_El_Capitan_Safari'     : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
       browserName : 'Safari'
     },
-    'sl_OSX_El_Capitan_Firefox'      : {
+    'sl_OSX_El_Capitan_Firefox'    : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
       browserName : 'Firefox'
     },
-    'sl_Win10_Edge_13'        : {
+    'sl_Win10_Edge_13'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'MicrosoftEdge',
-      version : '13.10586'
+      version     : '13.10586'
     },
-    'sl_Win10_Edge_14'        : {
+    'sl_Win10_Edge_14'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'MicrosoftEdge',
-      version : '14.14393'
+      version     : '14.14393'
     },
-    'sl_Win10_Edge_15'        : {
+    'sl_Win10_Edge_15'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'MicrosoftEdge',
-      version : '15.15063'
+      version     : '15.15063'
     },
-    'sl_Win10_Edge_16'        : {
+    'sl_Win10_Edge_16'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'MicrosoftEdge',
-      version : '16.16299'
+      version     : '16.16299'
     },
-    'sl_Win10_Edge_17'        : {
+    'sl_Win10_Edge_17'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'MicrosoftEdge',
-      version : '17.17134'
+      version     : '17.17134'
     },
-    'sl_Win10_IE11'        : {
+    'sl_Win10_IE11'                : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'Internet Explorer',
       version     : '11.103'
     },
-    'sl_Win81_IE11'        : {
+    'sl_Win81_IE11'                : {
       base        : 'SauceLabs',
       platform    : 'Windows 8.1',
       browserName : 'Internet Explorer',
       version     : '11.0'
     },
-    'sl_Win8_IE10'        : {
+    'sl_Win8_IE10'                 : {
       base        : 'SauceLabs',
       platform    : 'Windows 8',
       browserName : 'Internet Explorer',
       version     : '10.0'
     },
-    'sl_Win10_Chrome'      : {
+    'sl_Win10_Chrome'              : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'Chrome'
     },
-    'sl_Win81_Chrome'      : {
+    'sl_Win81_Chrome'              : {
       base        : 'SauceLabs',
       platform    : 'Windows 8.1',
       browserName : 'Chrome'
     },
-    'sl_Win8_Chrome'      : {
+    'sl_Win8_Chrome'               : {
       base        : 'SauceLabs',
       platform    : 'Windows 8',
       browserName : 'Chrome'
     },
-    'sl_Win7_Chrome'      : {
+    'sl_Win7_Chrome'               : {
       base        : 'SauceLabs',
       platform    : 'Windows 7',
       browserName : 'Chrome'
     },
-    'sl_Win10_Firefox'     : {
+    'sl_Win10_Firefox'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
       browserName : 'Firefox'
     },
-    'sl_Win81_Firefox'     : {
+    'sl_Win81_Firefox'             : {
       base        : 'SauceLabs',
       platform    : 'Windows 8.1',
       browserName : 'Firefox'
     },
-    'sl_Win8_Firefox'     : {
+    'sl_Win8_Firefox'              : {
       base        : 'SauceLabs',
       platform    : 'Windows 8',
       browserName : 'Firefox'
     },
-    'sl_Win7_Firefox'     : {
+    'sl_Win7_Firefox'              : {
       base        : 'SauceLabs',
       platform    : 'Windows 7',
       browserName : 'Firefox'
@@ -233,8 +233,15 @@ module.exports = function (config) {
     sauceLabs       : {
       testName          : 'lzwCompress.js on Sauce Labs',
       recordScreenshots : false,
-      public            : 'public',
-      transports        : ['polling']
+      tunnelIdentifier  : process.env.TRAVIS_JOB_NUMBER,
+      username          : process.env.SAUCE_USERNAME,
+      accessKey         : process.env.SAUCE_ACCESS_KEY,
+      startConnect      : false,
+      connectOptions    : {
+        port    : 5757,
+        logfile : 'sauce_connect.log'
+      },
+      public            : 'public'
     },
     // Increase timeout in case connection in CI is slow
     captureTimeout  : 120000,
