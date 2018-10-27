@@ -26,7 +26,7 @@ module.exports = function (grunt) {
       },
       dev        : {
         reporters : 'dots',
-        browsers  : ['PhantomJS']
+        browsers  : ['ChromeHeadless']
       }
     },
     jshint : {

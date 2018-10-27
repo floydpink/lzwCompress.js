@@ -3,6 +3,9 @@
 // Generated on 2015-07-31 using
 // generator-karma 1.0.0
 
+var puppeteer = require('puppeteer');
+process.env.CHROME_BIN = puppeteer.executablePath();
+
 module.exports = function (config) {
   'use strict';
 
@@ -13,71 +16,144 @@ module.exports = function (config) {
   // Browsers to run on Sauce Labs
   // Check out https://saucelabs.com/platforms for all browser/OS combos
   var customLaunchers = {
-    'SL_OSX_Chrome'      : {
+    'sl_macOS_High_Sierra_Chrome'      : {
+      base        : 'SauceLabs',
+      platform    : 'macOS 10.13',
+      browserName : 'Chrome'
+    },
+    'sl_macOS_High_Sierra_Safari'      : {
+      base        : 'SauceLabs',
+      platform    : 'macOS 10.13',
+      browserName : 'Safari'
+    },
+    'sl_macOS_High_Sierra_Firefox'      : {
+      base        : 'SauceLabs',
+      platform    : 'macOS 10.13',
+      browserName : 'Firefox'
+    },
+    'sl_macOS_Sierra_Chrome'      : {
+      base        : 'SauceLabs',
+      platform    : 'macOS 10.12',
+      browserName : 'Chrome'
+    },
+    'sl_macOS_Sierra_Safari'      : {
+      base        : 'SauceLabs',
+      platform    : 'macOS 10.12',
+      browserName : 'Safari'
+    },
+    'sl_macOS_Sierra_Firefox'      : {
+      base        : 'SauceLabs',
+      platform    : 'macOS 10.12',
+      browserName : 'Firefox'
+    },
+    'sl_OSX_El_Capitan_Chrome'      : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
-      browserName : 'chrome'
+      browserName : 'Chrome'
     },
-    'SL_OSX_Safari'      : {
+    'sl_OSX_El_Capitan_Safari'      : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
-      browserName : 'safari'
+      browserName : 'Safari'
     },
-    'SL_OSX_Firefox'     : {
+    'sl_OSX_El_Capitan_Firefox'      : {
       base        : 'SauceLabs',
       platform    : 'OS X 10.11',
-      browserName : 'firefox'
+      browserName : 'Firefox'
     },
-    'SL_Win_Edge'        : {
+    'sl_Win10_Edge_13'        : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
-      browserName : 'microsoftedge'
+      browserName : 'MicrosoftEdge',
+      version : '13.10586'
     },
-    'SL_Win_IE11'        : {
+    'sl_Win10_Edge_14'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'MicrosoftEdge',
+      version : '14.14393'
+    },
+    'sl_Win10_Edge_15'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'MicrosoftEdge',
+      version : '15.15063'
+    },
+    'sl_Win10_Edge_16'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'MicrosoftEdge',
+      version : '16.16299'
+    },
+    'sl_Win10_Edge_17'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'MicrosoftEdge',
+      version : '17.17134'
+    },
+    'sl_Win10_IE11'        : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 10',
+      browserName : 'Internet Explorer',
+      version     : '11.103'
+    },
+    'sl_Win81_IE11'        : {
       base        : 'SauceLabs',
       platform    : 'Windows 8.1',
-      browserName : 'internet explorer',
+      browserName : 'Internet Explorer',
       version     : '11.0'
     },
-    'SL_Win_IE10'        : {
+    'sl_Win8_IE10'        : {
       base        : 'SauceLabs',
-      platform    : 'Windows 7',
-      browserName : 'internet explorer',
+      platform    : 'Windows 8',
+      browserName : 'Internet Explorer',
       version     : '10.0'
     },
-    'SL_Win_IE9'        : {
+    'sl_Win7_IE9'        : {
       base        : 'SauceLabs',
       platform    : 'Windows 7',
-      browserName : 'internet explorer',
+      browserName : 'Internet Explorer',
       version     : '9.0'
     },
-    'SL_Win_Chrome'      : {
+    'sl_Win10_Chrome'      : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
-      browserName : 'chrome'
+      browserName : 'Chrome'
     },
-    'SL_Win_Firefox'     : {
+    'sl_Win81_Chrome'      : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 8.1',
+      browserName : 'Chrome'
+    },
+    'sl_Win8_Chrome'      : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 8',
+      browserName : 'Chrome'
+    },
+    'sl_Win7_Chrome'      : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 7',
+      browserName : 'Chrome'
+    },
+    'sl_Win10_Firefox'     : {
       base        : 'SauceLabs',
       platform    : 'Windows 10',
-      browserName : 'firefox'
+      browserName : 'Firefox'
     },
-    'SL_iOS_Safari'      : {
+    'sl_Win81_Firefox'     : {
       base        : 'SauceLabs',
-      platform    : 'OS X 10.10',
-      browserName : 'iPhone',
-      version     : '9.1',
-      customData  : {
-        deviceName : 'iPhone 6 Plus'
-      }
+      platform    : 'Windows 8.1',
+      browserName : 'Firefox'
     },
-    'SL_Android_Android' : {
+    'sl_Win8_Firefox'     : {
       base        : 'SauceLabs',
-      platform    : 'Linux',
-      browserName : 'android',
-      version     : '5.1',
-      customData  : {
-        deviceName : 'Android Emulator'
-      }
+      platform    : 'Windows 8',
+      browserName : 'Firefox'
+    },
+    'sl_Win7_Firefox'     : {
+      base        : 'SauceLabs',
+      platform    : 'Windows 7',
+      browserName : 'Firefox'
     }
   };
 
@@ -122,7 +198,7 @@ module.exports = function (config) {
 
     // Which plugins to enable
     plugins : [
-      "karma-phantomjs-launcher",
+      "karma-chrome-launcher",
       "karma-sauce-launcher",
       "karma-jasmine",
       "karma-jasmine-jquery",
