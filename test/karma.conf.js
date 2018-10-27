@@ -191,6 +191,7 @@ module.exports = function (config) {
     browsers : Object.keys(customLaunchers),
 
     // Which plugins to enable
+/*
     plugins : [
       "karma-chrome-launcher",
       "karma-sauce-launcher",
@@ -199,6 +200,7 @@ module.exports = function (config) {
       "karma-spec-reporter",
       "karma-coverage"
     ],
+*/
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
@@ -237,10 +239,6 @@ module.exports = function (config) {
       username          : process.env.SAUCE_USERNAME,
       accessKey         : process.env.SAUCE_ACCESS_KEY,
       startConnect      : false,
-      connectOptions    : {
-        port    : 5757,
-        logfile : 'sauce_connect.log'
-      },
       public            : 'public'
     },
     // Increase timeout in case connection in CI is slow

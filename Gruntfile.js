@@ -16,6 +16,9 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg    : grunt.file.readJSON('package.json'),
+    coveralls : {
+      coverageDir: 'coverage'
+    },
     karma  : {
       options    : {
         configFile : 'test/karma.conf.js',
@@ -64,5 +67,5 @@ module.exports = function (grunt) {
   grunt.registerTask('default', ['jshint', 'karma:dev']);
 
   // CI task
-  grunt.registerTask('ci', ['jshint', 'karma:continuous']);
+  grunt.registerTask('ci', ['jshint', 'karma:continuous', 'coveralls']);
 };
