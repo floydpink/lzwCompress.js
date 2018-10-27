@@ -191,7 +191,6 @@ module.exports = function (config) {
     browsers : Object.keys(customLaunchers),
 
     // Which plugins to enable
-/*
     plugins : [
       "karma-chrome-launcher",
       "karma-sauce-launcher",
@@ -200,7 +199,6 @@ module.exports = function (config) {
       "karma-spec-reporter",
       "karma-coverage"
     ],
-*/
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
@@ -235,10 +233,6 @@ module.exports = function (config) {
     sauceLabs       : {
       testName          : 'lzwCompress.js on Sauce Labs',
       recordScreenshots : false,
-      tunnelIdentifier  : process.env.TRAVIS_JOB_NUMBER,
-      username          : process.env.SAUCE_USERNAME,
-      accessKey         : process.env.SAUCE_ACCESS_KEY,
-      startConnect      : false,
       public            : 'public'
     },
     // Increase timeout in case connection in CI is slow
