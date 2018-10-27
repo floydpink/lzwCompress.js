@@ -29,10 +29,15 @@ module.exports = function (grunt) {
         configFile : 'test/karma.conf.js',
         port       : 9999
       },
-      continuous : {
+      ci         : {
         singleRun : true
       },
       dev        : {
+        singleRun : true,
+        reporters : 'dots',
+        browsers  : ['ChromeHeadless']
+      },
+      continuous : {
         reporters : 'dots',
         browsers  : ['ChromeHeadless']
       }
@@ -71,6 +76,9 @@ module.exports = function (grunt) {
   // Default task.
   grunt.registerTask('default', ['jshint', 'karma:dev']);
 
+  // Continuous Testing task.
+  grunt.registerTask('continuous', ['jshint', 'karma:continuous']);
+
   // CI task
-  grunt.registerTask('ci', ['jshint', 'karma:continuous', 'coveralls']);
+  grunt.registerTask('ci', ['jshint', 'karma:ci', 'coveralls']);
 };
