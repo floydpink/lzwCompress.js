@@ -15,13 +15,16 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg    : grunt.file.readJSON('package.json'),
+    pkg       : grunt.file.readJSON('package.json'),
     coveralls : {
-      options: {
-        force: true
+      options : {
+        force : true
+      },
+      lib     : {
+        src : 'coverage/report-lcov/lcov.info'
       }
     },
-    karma  : {
+    karma     : {
       options    : {
         configFile : 'test/karma.conf.js',
         port       : 9999
@@ -34,7 +37,7 @@ module.exports = function (grunt) {
         browsers  : ['ChromeHeadless']
       }
     },
-    jshint : {
+    jshint    : {
       options   : {
         jshintrc : '.jshintrc',
         reporter : require('jshint-stylish')
@@ -49,7 +52,7 @@ module.exports = function (grunt) {
         src : ['test/**/*.js']
       }
     },
-    watch  : {
+    watch     : {
       gruntfile : {
         files : '<%= jshint.gruntfile.src %>',
         tasks : ['jshint:gruntfile']
