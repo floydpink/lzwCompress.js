@@ -1,6 +1,6 @@
 {
   "name": "lzwcompress",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.",
   "main": "lzwCompress.js",
   "directories": {
