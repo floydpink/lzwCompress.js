@@ -42,7 +42,7 @@
     "karma-jasmine-jquery": "^0.1.1",
     "karma-sauce-launcher": "^2.0.2",
     "karma-spec-reporter": "0.0.32",
-    "load-grunt-tasks": "^4.0.0",
+    "load-grunt-tasks": "^5.0.0",
     "puppeteer": "^1.9.0",
     "time-grunt": "^2.0.0"
   }
