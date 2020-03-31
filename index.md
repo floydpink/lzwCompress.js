@@ -1,9 +1,12 @@
 [lzwCompress.js](http://floydpink.github.io/lzwCompress.js/)
 ==============
 
-[![npm](https://img.shields.io/npm/v/lzwcompress.svg)](https://www.npmjs.com/package/lzwcompress) [![Travis](https://img.shields.io/travis/floydpink/lzwCompress.js.svg)](https://travis-ci.org/floydpink/lzwCompress.js) [![Code Climate](https://img.shields.io/codeclimate/github/floydpink/lzwCompress.js.svg)](https://codeclimate.com/github/floydpink/lzwCompress.js/code) [![Code Climate](https://img.shields.io/codeclimate/coverage/github/floydpink/lzwCompress.js.svg)](https://codeclimate.com/github/floydpink/lzwCompress.js/coverage) [![David](https://img.shields.io/david/dev/floydpink/lzwCompress.js.svg)](https://david-dm.org/floydpink/lzwCompress.js#info=devDependencies&view=table)
+[![npm](https://img.shields.io/npm/v/lzwcompress.svg)](https://www.npmjs.com/package/lzwcompress) [![Travis](https://img.shields.io/travis/floydpink/lzwCompress.js.svg)](https://travis-ci.org/floydpink/lzwCompress.js) [![Coverage Status](https://coveralls.io/repos/github/floydpink/lzwCompress.js/badge.svg?branch=master)](https://coveralls.io/github/floydpink/lzwCompress.js?branch=master) [![David](https://img.shields.io/david/dev/floydpink/lzwCompress.js.svg)](https://david-dm.org/floydpink/lzwCompress.js#info=devDependencies&view=table) [![Build Status](https://saucelabs.com/buildstatus/floydpink)](https://saucelabs.com/beta/builds/4aa2f9473e934e3382029114eb92dc31) [![codecov](https://codecov.io/gh/floydpink/lzwCompress.js/branch/master/graph/badge.svg)](https://codecov.io/gh/floydpink/lzwCompress.js) 
 
-Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
+[![Build Status](https://saucelabs.com/browser-matrix/floydpink.svg)](https://saucelabs.com/beta/builds/4aa2f9473e934e3382029114eb92dc31)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js?ref=badge_shield)
+
+> Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
 
 ### Usage:
 
@@ -65,4 +68,11 @@ Applies LZW compression and JSON key optimization and makes JSON (or any javascr
 
 ### License
 
-[MIT License](https://github.com/floydpink/lzwCompress.js/blob/master/LICENSE)
+[MIT License](LICENSE)
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js?ref=badge_large)
+
+### Other Libraries
+
+For use in Angular 1.X projects, check out the [angular-lzwcompress](https://github.com/aengus1/angular-lzwcompress) module
