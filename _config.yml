@@ -1,0 +1,8 @@
+title: lzwCompress.js
+description: Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
+google_analytics: UA-36383654-1
+show_downloads: true
+theme: jekyll-theme-cayman
+
+gems:
+  - jekyll-mentions
