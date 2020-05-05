@@ -28,7 +28,7 @@
   "devDependencies": {
     "grunt": "^1.1.0",
     "grunt-contrib-connect": "^2.1.0",
-    "grunt-contrib-jasmine": "^2.1.0",
+    "grunt-contrib-jasmine": "^2.2.0",
     "grunt-contrib-jshint": "^2.1.0",
     "grunt-contrib-watch": "^1.1.0",
     "grunt-coveralls": "^2.0.0",
