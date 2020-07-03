@@ -26,7 +26,7 @@
   },
   "homepage": "http://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
-    "grunt": "^1.1.0",
+    "grunt": "^1.2.0",
     "grunt-contrib-connect": "^2.1.0",
     "grunt-contrib-jasmine": "^2.2.0",
     "grunt-contrib-jshint": "^2.1.0",
@@ -40,7 +40,7 @@
     "karma-coverage": "^2.0.2",
     "karma-jasmine": "^3.3.1",
     "karma-jasmine-jquery": "^0.1.1",
-    "karma-sauce-launcher": "^4.1.4",
+    "karma-sauce-launcher": "^4.1.5",
     "karma-spec-reporter": "0.0.32",
     "load-grunt-tasks": "^5.1.0",
     "puppeteer": "^5.0.0",
