@@ -1,8 +1,9 @@
 {
   "node"     : true,
   "browser"  : true,
+  "esversion": 6,
   "bitwise"  : true,
-  "camelcase": true,
+  "camelcase": false,
   "curly"    : true,
   "eqeqeq"   : true,
   "immed"    : true,

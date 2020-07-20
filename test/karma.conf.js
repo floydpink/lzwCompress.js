@@ -3,152 +3,215 @@
 // Generated on 2015-07-31 using
 // generator-karma 1.0.0
 
-var puppeteer = require('puppeteer');
+const puppeteer = require('puppeteer');
 process.env.CHROME_BIN = puppeteer.executablePath();
 
 module.exports = function (config) {
   'use strict';
 
-  if (!process.env.SAUCE_USERNAME || !process.env.SAUCE_ACCESS_KEY) {
-    console.error('Make sure the SAUCE_USERNAME and SAUCE_ACCESS_KEY environment variables are set.');
+  if (!process.env.BROWSERSTACK_USERNAME || !process.env.BROWSERSTACK_ACCESS_KEY) {
+    console.error('Make sure the BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY environment variables are set.');
   }
 
-  // Browsers to run on Sauce Labs
-  // Check out https://saucelabs.com/platforms for all browser/OS combos
-  var customLaunchers = {
-    'sl_macOS_High_Sierra_Chrome'  : {
-      base        : 'SauceLabs',
-      platform    : 'macOS 10.13',
-      browserName : 'Chrome'
+  // Browsers to run on BrowserStack
+  // Check out https://automate.browserstack.com/dashboard/v2/getting-started for all browser/OS combos
+  const customLaunchers = {
+    bs_ie_win_10                       : {
+      base            : 'BrowserStack',
+      browser         : 'IE',
+      browser_version : '11',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_macOS_High_Sierra_Safari'  : {
-      base        : 'SauceLabs',
-      platform    : 'macOS 10.13',
-      browserName : 'Safari'
+    bs_edge_win_10                     : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '81',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_macOS_High_Sierra_Firefox' : {
-      base        : 'SauceLabs',
-      platform    : 'macOS 10.13',
-      browserName : 'Firefox'
+    bs_edge_minus_1_win_10             : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '80',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_macOS_Sierra_Chrome'       : {
-      base        : 'SauceLabs',
-      platform    : 'macOS 10.12',
-      browserName : 'Chrome'
+    bs_firefox_win_10                  : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '74',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_macOS_Sierra_Safari'       : {
-      base        : 'SauceLabs',
-      platform    : 'macOS 10.12',
-      browserName : 'Safari'
+    bs_firefox_minus_1_win_10          : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '73',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_macOS_Sierra_Firefox'      : {
-      base        : 'SauceLabs',
-      platform    : 'macOS 10.12',
-      browserName : 'Firefox'
+    bs_chrome_win_10                   : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '81',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_OSX_El_Capitan_Chrome'     : {
-      base        : 'SauceLabs',
-      platform    : 'OS X 10.11',
-      browserName : 'Chrome'
+    bs_chrome_minus_1_win_10           : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '80',
+      os              : 'Windows',
+      os_version      : '10'
     },
-    'sl_OSX_El_Capitan_Safari'     : {
-      base        : 'SauceLabs',
-      platform    : 'OS X 10.11',
-      browserName : 'Safari'
+    bs_ie_win_81                       : {
+      base            : 'BrowserStack',
+      browser         : 'IE',
+      browser_version : '11',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_OSX_El_Capitan_Firefox'    : {
-      base        : 'SauceLabs',
-      platform    : 'OS X 10.11',
-      browserName : 'Firefox'
+    bs_edge_win_81                     : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '81',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_Win10_Edge_13'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'MicrosoftEdge',
-      version     : '13.10586'
+    bs_edge_minus_1_win_81             : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '80',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_Win10_Edge_14'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'MicrosoftEdge',
-      version     : '14.14393'
+    bs_firefox_win_81                  : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '74',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_Win10_Edge_15'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'MicrosoftEdge',
-      version     : '15.15063'
+    bs_firefox_minus_1_win_81          : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '73',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_Win10_Edge_16'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'MicrosoftEdge',
-      version     : '16.16299'
+    bs_chrome_win_81                   : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '81',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_Win10_Edge_17'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'MicrosoftEdge',
-      version     : '17.17134'
+    bs_chrome_minus_1_win_81           : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '80',
+      os              : 'Windows',
+      os_version      : '8.1'
     },
-    'sl_Win10_IE11'                : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'Internet Explorer',
-      version     : '11.103'
+    bs_safari_mac_os_catalina          : {
+      base            : 'BrowserStack',
+      browser         : 'Safari',
+      browser_version : '13',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win81_IE11'                : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 8.1',
-      browserName : 'Internet Explorer',
-      version     : '11.0'
+    bs_edge_mac_os_catalina            : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '81',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win8_IE10'                 : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 8',
-      browserName : 'Internet Explorer',
-      version     : '10.0'
+    bs_edge_minus_1_mac_os_catalina    : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '80',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win10_Chrome'              : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'Chrome'
+    bs_firefox_mac_os_catalina         : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '74',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win81_Chrome'              : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 8.1',
-      browserName : 'Chrome'
+    bs_firefox_minus_1_mac_os_catalina : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '73',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win8_Chrome'               : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 8',
-      browserName : 'Chrome'
+    bs_chrome_mac_os_catalina          : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '81',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win7_Chrome'               : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 7',
-      browserName : 'Chrome'
+    bs_chrome_minus_1_mac_os_catalina  : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '80',
+      os              : 'OS X',
+      os_version      : 'Catalina'
     },
-    'sl_Win10_Firefox'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 10',
-      browserName : 'Firefox'
+    bs_safari_mac_os_mojave            : {
+      base            : 'BrowserStack',
+      browser         : 'Safari',
+      browser_version : '12.1',
+      os              : 'OS X',
+      os_version      : 'Mojave'
     },
-    'sl_Win81_Firefox'             : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 8.1',
-      browserName : 'Firefox'
+    bs_edge_mac_os_mojave              : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '81',
+      os              : 'OS X',
+      os_version      : 'Mojave'
     },
-    'sl_Win8_Firefox'              : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 8',
-      browserName : 'Firefox'
+    bs_edge_minus_1_mac_os_mojave      : {
+      base            : 'BrowserStack',
+      browser         : 'Edge',
+      browser_version : '80',
+      os              : 'OS X',
+      os_version      : 'Mojave'
     },
-    'sl_Win7_Firefox'              : {
-      base        : 'SauceLabs',
-      platform    : 'Windows 7',
-      browserName : 'Firefox'
-    }
+    bs_firefox_mac_os_mojave           : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '74',
+      os              : 'OS X',
+      os_version      : 'Mojave'
+    },
+    bs_firefox_minus_1_mac_os_mojave   : {
+      base            : 'BrowserStack',
+      browser         : 'Firefox',
+      browser_version : '73',
+      os              : 'OS X',
+      os_version      : 'Mojave'
+    },
+    bs_chrome_mac_os_mojave            : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '81',
+      os              : 'OS X',
+      os_version      : 'Mojave'
+    },
+    bs_chrome_minus_1_mac_os_mojave    : {
+      base            : 'BrowserStack',
+      browser         : 'Chrome',
+      browser_version : '80',
+      os              : 'OS X',
+      os_version      : 'Mojave'
+    },
   };
 
   config.set({
@@ -193,7 +256,7 @@ module.exports = function (config) {
     // Which plugins to enable
     plugins : [
       "karma-chrome-launcher",
-      "karma-sauce-launcher",
+      "karma-browserstack-launcher",
       "karma-jasmine",
       "karma-jasmine-jquery",
       "karma-spec-reporter",
@@ -218,7 +281,7 @@ module.exports = function (config) {
     // urlRoot: '_karma_'
 
     // coverage reporter generates the coverage
-    reporters : ['spec', 'coverage', 'saucelabs'],
+    reporters : ['spec', 'coverage', 'BrowserStack'],
 
     specReporter : {maxLogLines : 10},
 
@@ -229,14 +292,13 @@ module.exports = function (config) {
       'lzwCompress.js' : ['coverage']
     },
 
-    // Sauce Labs config
-    sauceLabs       : {
-      testName          : 'lzwCompress.js on Sauce Labs',
-      recordScreenshots : false,
-      tunnelIdentifier  : process.env.TRAVIS_JOB_NUMBER,
-      startConnect      : false,
-      public            : 'public'
+    // BrowserStack config
+    browserStack : {
+      build   : process.env.TRAVIS_BRANCH || 'Local',
+      project : 'lzwCompress.js',
+      timeout : 600
     },
+
     // Increase timeout in case connection in CI is slow
     captureTimeout  : 120000,
     customLaunchers : customLaunchers,

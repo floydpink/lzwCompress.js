@@ -2,7 +2,7 @@
 
 describe('lzwCompress Tests', function () {
 
-  var obj1, obj2, obj3, array1, array2, array3, array4, largeJSON;
+  let obj1, obj2, obj3, array1, array2, array3, array4, largeJSON;
 
   beforeEach(function () {
     jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
