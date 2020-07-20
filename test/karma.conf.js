@@ -218,6 +218,9 @@ module.exports = function (config) {
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch : true,
 
+    // ensure localhost works: https://www.browserstack.com/question/759
+    hostname : 'bs-local.com',
+
     // base path, that will be used to resolve files and exclude
     basePath : '../',
 
@@ -294,9 +297,13 @@ module.exports = function (config) {
 
     // BrowserStack config
     browserStack : {
-      build   : process.env.TRAVIS_BRANCH || 'Local',
-      project : 'lzwCompress.js',
-      timeout : 600
+      video            : false,
+      tunnelIdentifier : process.env.TRAVIS_JOB_NUMBER,
+      startTunnel      : false,
+      build            : process.env.TRAVIS_BRANCH || 'Local',
+      project          : 'lzwCompress.js',
+      timeout          : 600,
+      forceLocal       : true
     },
 
     // Increase timeout in case connection in CI is slow
