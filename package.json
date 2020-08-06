@@ -33,17 +33,17 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-coveralls": "^2.0.0",
     "grunt-karma": "^4.0.0",
-    "jasmine-core": "^3.5.0",
+    "jasmine-core": "^3.6.0",
     "jshint-stylish": "^2.2.1",
-    "karma": "^5.1.0",
+    "karma": "^5.1.1",
     "karma-browserstack-launcher": "^1.6.0",
     "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.2",
+    "karma-coverage": "^2.0.3",
     "karma-jasmine": "^3.3.1",
     "karma-jasmine-jquery": "^0.1.1",
     "karma-spec-reporter": "0.0.32",
     "load-grunt-tasks": "^5.1.0",
-    "puppeteer": "^5.2.0",
+    "puppeteer": "^5.2.1",
     "time-grunt": "^2.0.0"
   }
 }
