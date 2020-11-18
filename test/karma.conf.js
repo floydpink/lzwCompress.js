@@ -82,7 +82,7 @@ module.exports = function (config) {
     // urlRoot: '_karma_'
 
     // coverage reporter generates the coverage
-    reporters : ['spec', 'coverage', 'BrowserStack'],
+    reporters : ['spec', 'coverage'],
 
     specReporter : {maxLogLines : 10},
 
