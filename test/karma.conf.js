@@ -13,207 +13,6 @@ module.exports = function (config) {
     console.error('Make sure the BROWSERSTACK_USERNAME and BROWSERSTACK_ACCESS_KEY environment variables are set.');
   }
 
-  // Browsers to run on BrowserStack
-  // Check out https://automate.browserstack.com/dashboard/v2/getting-started for all browser/OS combos
-  const customLaunchers = {
-    bs_ie_win_10                       : {
-      base            : 'BrowserStack',
-      browser         : 'IE',
-      browser_version : '11',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_edge_win_10                     : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '81',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_edge_minus_1_win_10             : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '80',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_firefox_win_10                  : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '74',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_firefox_minus_1_win_10          : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '73',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_chrome_win_10                   : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '81',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_chrome_minus_1_win_10           : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '80',
-      os              : 'Windows',
-      os_version      : '10'
-    },
-    bs_ie_win_81                       : {
-      base            : 'BrowserStack',
-      browser         : 'IE',
-      browser_version : '11',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_edge_win_81                     : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '81',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_edge_minus_1_win_81             : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '80',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_firefox_win_81                  : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '74',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_firefox_minus_1_win_81          : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '73',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_chrome_win_81                   : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '81',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_chrome_minus_1_win_81           : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '80',
-      os              : 'Windows',
-      os_version      : '8.1'
-    },
-    bs_safari_mac_os_catalina          : {
-      base            : 'BrowserStack',
-      browser         : 'Safari',
-      browser_version : '13',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_edge_mac_os_catalina            : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '81',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_edge_minus_1_mac_os_catalina    : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '80',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_firefox_mac_os_catalina         : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '74',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_firefox_minus_1_mac_os_catalina : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '73',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_chrome_mac_os_catalina          : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '81',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_chrome_minus_1_mac_os_catalina  : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '80',
-      os              : 'OS X',
-      os_version      : 'Catalina'
-    },
-    bs_safari_mac_os_mojave            : {
-      base            : 'BrowserStack',
-      browser         : 'Safari',
-      browser_version : '12.1',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-    bs_edge_mac_os_mojave              : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '81',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-    bs_edge_minus_1_mac_os_mojave      : {
-      base            : 'BrowserStack',
-      browser         : 'Edge',
-      browser_version : '80',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-    bs_firefox_mac_os_mojave           : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '74',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-    bs_firefox_minus_1_mac_os_mojave   : {
-      base            : 'BrowserStack',
-      browser         : 'Firefox',
-      browser_version : '73',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-    bs_chrome_mac_os_mojave            : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '81',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-    bs_chrome_minus_1_mac_os_mojave    : {
-      base            : 'BrowserStack',
-      browser         : 'Chrome',
-      browser_version : '80',
-      os              : 'OS X',
-      os_version      : 'Mojave'
-    },
-  };
-
   config.set({
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch : true,
@@ -254,12 +53,11 @@ module.exports = function (config) {
     // - Safari (only Mac)
     // - PhantomJS
     // - IE (only Windows)
-    browsers : Object.keys(customLaunchers),
+    browsers : ['ChromeHeadless'],
 
     // Which plugins to enable
     plugins : [
       "karma-chrome-launcher",
-      "karma-browserstack-launcher",
       "karma-jasmine",
       "karma-jasmine-jquery",
       "karma-spec-reporter",
@@ -295,20 +93,8 @@ module.exports = function (config) {
       'lzwCompress.js' : ['coverage']
     },
 
-    // BrowserStack config
-    browserStack : {
-      video            : false,
-      tunnelIdentifier : process.env.TRAVIS_JOB_NUMBER,
-      startTunnel      : false,
-      build            : process.env.TRAVIS_BRANCH || 'Local',
-      project          : 'lzwCompress.js',
-      timeout          : 600,
-      forceLocal       : true
-    },
-
     // Increase timeout in case connection in CI is slow
     captureTimeout  : 120000,
-    customLaunchers : customLaunchers,
 
     // configure the reporter
     coverageReporter : {

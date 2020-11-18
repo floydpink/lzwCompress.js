@@ -1,13 +1,17 @@
 sudo: false
+os:
+ - linux
+ - osx
 language: node_js
-addons:
-  sauce_connect: true
 node_js:
   - 'stable'
 before_script:
-  - 'npm install -g grunt-cli codecov codeclimate-test-reporter'
+  - 'npm install -g grunt-cli codecov
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 script:
   - grunt ci
 after_success:
-  - 'codeclimate-test-reporter < coverage/lcov.info'
   - 'codecov'
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
