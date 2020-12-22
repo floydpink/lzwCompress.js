@@ -76,6 +76,12 @@ describe('lzwCompress Tests', function () {
       expect(lzwCompress.unpack(lzwCompress.pack('"{\\"abnabnabn\\":\\"asd\\"}"'))).toEqual('"{\\"abnabnabn\\":\\"asd\\"}"'); // issue #1 - https://github.com/floydpink/lzwCompress.js/issues/1
     });
 
+    it('should pack/unpack objects with javascript while avoiding prototype methods', function() {
+      var jsString = 'toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,toString,';
+
+      expect(lzwCompress.unpack(lzwCompress.pack(jsString))).toEqual(jsString);
+    });
+
   });
 
   describe('arrays', function () {
@@ -96,7 +102,6 @@ describe('lzwCompress Tests', function () {
       expect(lzwCompress.unpack(lzwCompress.pack(obj2))).toEqual(obj2);
       expect(lzwCompress.unpack(lzwCompress.pack(obj3))).toEqual(obj3);
     });
-
   });
 
   describe('large json', function () {
