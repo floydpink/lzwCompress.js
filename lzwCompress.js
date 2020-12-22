@@ -121,7 +121,7 @@
             return uncompressed;
           }
           let i;
-          const dictionary = {};
+          const dictionary = Object.create(null);
           let c,
             wc,
             w = '';
