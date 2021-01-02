@@ -1,7 +1,7 @@
 /*
  * lzwCompress.js
  *
- * Copyright (c) 2012-2020 floydpink
+ * Copyright (c) 2012-2021 floydpink
  * Licensed under the MIT license.
  */
 
