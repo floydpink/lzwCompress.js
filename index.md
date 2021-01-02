@@ -15,7 +15,7 @@ npm install lzwcompress
 
 And then to use it in your node.js applications:
 
-```ecmascript 6
+```
 import lzwCompress from 'lzwcompress';
 
 const json = {
