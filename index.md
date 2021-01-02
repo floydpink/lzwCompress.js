@@ -1,16 +1,11 @@
 [lzwCompress.js](http://floydpink.github.io/lzwCompress.js/)
 ==============
 
-[![npm](https://img.shields.io/npm/v/lzwcompress.svg)](https://www.npmjs.com/package/lzwcompress) [![Travis](https://img.shields.io/travis/floydpink/lzwCompress.js.svg)](https://travis-ci.org/floydpink/lzwCompress.js) [![Coverage Status](https://coveralls.io/repos/github/floydpink/lzwCompress.js/badge.svg?branch=master)](https://coveralls.io/github/floydpink/lzwCompress.js?branch=master) [![David](https://img.shields.io/david/dev/floydpink/lzwCompress.js.svg)](https://david-dm.org/floydpink/lzwCompress.js#info=devDependencies&view=table) [![Build Status](https://saucelabs.com/buildstatus/floydpink)](https://saucelabs.com/beta/builds/4aa2f9473e934e3382029114eb92dc31) [![codecov](https://codecov.io/gh/floydpink/lzwCompress.js/branch/master/graph/badge.svg)](https://codecov.io/gh/floydpink/lzwCompress.js) 
-
-[![Build Status](https://saucelabs.com/browser-matrix/floydpink.svg)](https://saucelabs.com/beta/builds/4aa2f9473e934e3382029114eb92dc31)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js?ref=badge_shield)
+[![npm](https://img.shields.io/npm/v/lzwcompress.svg)](https://www.npmjs.com/package/lzwcompress) [![Travis](https://img.shields.io/travis/floydpink/lzwCompress.js.svg)](https://travis-ci.org/floydpink/lzwCompress.js) [![Appveyor](https://ci.appveyor.com/api/projects/status/o9414h87kwob2equ/branch/main?svg=true)](https://ci.appveyor.com/project/floydpink/lzwcompress-js/branch/main) [![Coverage Status](https://coveralls.io/repos/github/floydpink/lzwCompress.js/badge.svg?branch=main)](https://coveralls.io/github/floydpink/lzwCompress.js?branch=main) [![codecov](https://codecov.io/gh/floydpink/lzwCompress.js/branch/main/graph/badge.svg)](https://codecov.io/gh/floydpink/lzwCompress.js) [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js?ref=badge_shield)
 
 > Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.
 
 ### Usage:
-
-#### Node
 
 Install lzwCompress from npm:
 
@@ -20,48 +15,28 @@ npm install lzwcompress
 
 And then to use it in your node.js applications:
 
-```javascript
-var lzwCompress = require('lzwcompress');
+```ecmascript 6
+import lzwCompress from 'lzwcompress';
 
-...
+const json = {
+  name: 'Mr. JavaScript Kumar',
+  age: 42,
+  start_date: new Date(),
+  address: {
+    street: '123 MG Road',
+    city: 'Mumbai',
+    state: 'Maharashtra',
+    country: 'India'
+  }
+};
 
-// To compress anything from within JS
-var compressed = lzwCompress.pack(humongousObj);
+// to compress objects
+const compressed = lzwCompress.pack(json);
 
-...
+// to uncomress
+const original = lzwCompress.unpack(compressed);
 
-// And to decompress it
-var original = lzwCompress.unpack(compressed);
-```
-
-#### Browser
-
-Install lzwCompress from npm:
-
-```
-bower install --save lzwcompress
-```
-
-Then include lzwCompress.js using a script tag in your HTML:
-
-```html
-<script src="lzwCompress.js"></script>
-```
-
-And then use it in your browser applications:
-
-```javascript
-var lzwCompress = window.lzwCompress;
-
-...
-
-// To compress anything from within JS
-var compressed = lzwCompress.pack(humongousObj);
-
-...
-
-// And to decompress it
-var original = lzwCompress.unpack(compressed);
+console.log(original);
 ```
 
 Applies LZW compression and JSON key optimization and makes JSON (or any javascript object) smaller for local storage, to ship up to the server etc.
