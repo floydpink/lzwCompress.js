@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build_linux:
+  build:
     docker:
       - image: cimg/node:lts-browsers
     steps:
@@ -28,41 +28,12 @@ jobs:
       - run:
           name: Push Coverage
           command: codecov
-  build_mac:
-    macos:
-      xcode: 12.3.0
-    steps:
-      - checkout
-      - run:
-          name: Update NPM
-          command: sudo npm install -g npm@latest
-      - run:
-          name: Install Dependencies
-          command: |
-            sudo npm install -g grunt-cli codecov
-      - restore_cache:
-          key: node-cache-{{ checksum "package-lock.json" }}
-      - run:
-          name: Install NPM packages
-          command: npm ci
-      - save_cache:
-          key: node-cache-{{ checksum "package-lock.json" }}
-          paths:
-            - ./node_modules
-      - run:
-          name: Run tests
-          command: grunt ci
 
 workflows:
   version: 2
   build:
     jobs:
-      - build_linux:
-          filters:
-            branches:
-              ignore:
-                - gh-pages
-      - build_mac:
+      - build:
           filters:
             branches:
               ignore:
