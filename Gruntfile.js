@@ -16,14 +16,6 @@ module.exports = function (grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg       : grunt.file.readJSON('package.json'),
-    coveralls : {
-      options : {
-        force : true
-      },
-      lib     : {
-        src : 'coverage/report-lcov/lcov.info'
-      }
-    },
     karma     : {
       options    : {
         configFile : 'test/karma.conf.js',
@@ -80,5 +72,5 @@ module.exports = function (grunt) {
   grunt.registerTask('continuous', ['jshint', 'karma:continuous']);
 
   // CI task
-  grunt.registerTask('ci', ['jshint', 'karma:ci', 'coveralls']);
+  grunt.registerTask('ci', ['jshint', 'karma:ci']);
 };

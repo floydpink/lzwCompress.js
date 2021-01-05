@@ -31,7 +31,6 @@
     "grunt-contrib-jasmine": "^2.2.0",
     "grunt-contrib-jshint": "^3.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "grunt-coveralls": "^2.0.0",
     "grunt-karma": "^4.0.0",
     "jasmine-core": "^3.6.0",
     "jshint-stylish": "^2.2.1",
