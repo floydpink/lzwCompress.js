@@ -15,8 +15,8 @@ module.exports = function (grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg       : grunt.file.readJSON('package.json'),
-    karma     : {
+    pkg    : grunt.file.readJSON('package.json'),
+    karma  : {
       options    : {
         configFile : 'test/karma.conf.js',
         port       : 9999
@@ -34,7 +34,7 @@ module.exports = function (grunt) {
         browsers  : ['ChromeHeadless']
       }
     },
-    jshint    : {
+    jshint : {
       options   : {
         jshintrc : '.jshintrc',
         reporter : require('jshint-stylish')
@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         src : ['test/**/*.js']
       }
     },
-    watch     : {
+    watch  : {
       gruntfile : {
         files : '<%= jshint.gruntfile.src %>',
         tasks : ['jshint:gruntfile']

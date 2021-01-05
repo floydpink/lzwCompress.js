@@ -94,7 +94,7 @@ module.exports = function (config) {
     },
 
     // Increase timeout in case connection in CI is slow
-    captureTimeout  : 120000,
+    captureTimeout : 120000,
 
     // configure the reporter
     coverageReporter : {

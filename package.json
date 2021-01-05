@@ -1,44 +1,44 @@
 {
-  "name": "lzwcompress",
-  "version": "0.7.1",
-  "description": "Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.",
-  "main": "lzwCompress.js",
-  "directories": {
+  "name"           : "lzwcompress",
+  "version"        : "0.7.1",
+  "description"    : "Lossless LZW compression/decompression implemented in JavaScript for strings/JSON/JS objects.",
+  "main"           : "lzwCompress.js",
+  "directories"    : {
     "test": "test"
   },
-  "scripts": {
+  "scripts"        : {
     "test": "grunt"
   },
-  "repository": {
+  "repository"     : {
     "type": "git",
-    "url": "floydpink/lzwCompress.js.git"
+    "url" : "floydpink/lzwCompress.js.git"
   },
-  "keywords": [
+  "keywords"       : [
     "lzw",
     "lzw compress",
     "compress",
     "JSON"
   ],
-  "author": "floydpink",
-  "license": "MIT",
-  "bugs": {
+  "author"         : "floydpink",
+  "license"        : "MIT",
+  "bugs"           : {
     "url": "https://github.com/floydpink/lzwCompress.js/issues"
   },
-  "homepage": "http://floydpink.github.io/lzwCompress.js/",
+  "homepage"       : "http://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
-    "grunt": "^1.3.0",
-    "grunt-contrib-jshint": "^3.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-karma": "^4.0.0",
-    "jshint-stylish": "^2.2.1",
-    "karma": "^5.2.3",
+    "grunt"                : "^1.3.0",
+    "grunt-contrib-jshint" : "^3.0.0",
+    "grunt-contrib-watch"  : "^1.1.0",
+    "grunt-karma"          : "^4.0.0",
+    "jshint-stylish"       : "^2.2.1",
+    "karma"                : "^5.2.3",
     "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.3",
-    "karma-jasmine": "^4.0.1",
-    "karma-jasmine-jquery": "^0.1.1",
-    "karma-spec-reporter": "0.0.32",
-    "load-grunt-tasks": "^5.1.0",
-    "puppeteer": "^5.5.0",
-    "time-grunt": "^2.0.0"
+    "karma-coverage"       : "^2.0.3",
+    "karma-jasmine"        : "^4.0.1",
+    "karma-jasmine-jquery" : "^0.1.1",
+    "karma-spec-reporter"  : "0.0.32",
+    "load-grunt-tasks"     : "^5.1.0",
+    "puppeteer"            : "^5.5.0",
+    "time-grunt"           : "^2.0.0"
   }
 }

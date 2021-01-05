@@ -45,7 +45,6 @@ Applies LZW compression and JSON key optimization and makes JSON (or any javascr
 
 [MIT License](LICENSE)
 
-
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Ffloydpink%2FlzwCompress.js?ref=badge_large)
 
 ### Other Libraries

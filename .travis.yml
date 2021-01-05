@@ -1,6 +1,6 @@
 sudo: false
 os:
- - osx
+  - osx
 language: node_js
 node_js:
   - 'stable'
