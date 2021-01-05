@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build_linux:
     docker:
-      - image: circleci/node:14
+      - image: cimg/node:lts-browsers
     steps:
       - checkout
       - run:
