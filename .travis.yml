@@ -1,0 +1,11 @@
+sudo: false
+os:
+ - osx
+language: node_js
+node_js:
+  - 'stable'
+before_script:
+  - npm install -g grunt-cli codecov
+script:
+  - grunt ci
+
