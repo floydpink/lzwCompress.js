@@ -9,6 +9,13 @@
   "scripts": {
     "test": "grunt"
   },
+  "files": [
+    "package.json",
+    "bower.json",
+    "lzwCompress.js",
+    "README.md",
+    "LICENSE"
+  ],
   "repository": {
     "type": "git",
     "url": "floydpink/lzwCompress.js.git"
