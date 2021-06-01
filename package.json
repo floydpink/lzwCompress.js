@@ -7,8 +7,9 @@
     "test": "test"
   },
   "scripts": {
-    "lint": "jshint --reporter=node_modules/jshint-stylish lzwCompress.js && jshint --reporter=node_modules/jshint-stylish test/lzwCompress.spec.js",
-    "test": "nyc jasmine"
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "lint": "jshint --reporter=node_modules/jshint-stylish lzwCompress.js && jshint --reporter=node_modules/jshint-stylish spec/lzwCompress.spec.js",
+    "test": "nyc --reporter=lcov --reporter=text --reporter=html jasmine"
   },
   "files": [
     "package.json",
