@@ -7,7 +7,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "grunt"
+    "test": "grunt",
+    "test-ci": "grunt ci"
   },
   "files": [
     "package.json",
@@ -31,7 +32,7 @@
   "bugs": {
     "url": "https://github.com/floydpink/lzwCompress.js/issues"
   },
-  "homepage": "http://floydpink.github.io/lzwCompress.js/",
+  "homepage": "https://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
     "grunt": "^1.4.1",
     "grunt-contrib-jshint": "^3.0.0",
