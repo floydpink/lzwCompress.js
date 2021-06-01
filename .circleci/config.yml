@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            sudo npm install -g codecov
+            sudo npm install -g codecov coveralls
       - restore_cache:
           key: node-cache-{{ checksum "package-lock.json" }}
       - run:
