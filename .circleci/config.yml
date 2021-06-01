@@ -37,8 +37,7 @@ jobs:
       - run:
           name: Push Coverage
           command: codecov
-      - coveralls/upload:
-          path_to_lcov: coverage/report-lcov/lcov.info
+      - coveralls/upload
 
 workflows:
   version: 2
