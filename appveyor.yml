@@ -1,6 +1,7 @@
 # Test against the latest version of this Node.js version
 environment:
   matrix:
+    - nodejs_version: "16"
     - nodejs_version: "15"
     - nodejs_version: "14"
     - nodejs_version: "12"
@@ -17,7 +18,9 @@ test_script:
   # Output useful info for debugging.
   - node --version
   - npm --version
-  # run tests
+  # lint
+  - npm run lint
+  # run test
   - npm test
 
 # Don't actually build.

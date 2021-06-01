@@ -4,10 +4,10 @@ describe('lzwCompress Tests', function () {
 
   let obj1, obj2, obj3, array1, array2, array3, array4, largeJSON;
 
-  beforeEach(function () {
-    jasmine.getJSONFixtures().fixturesPath = 'base/test/mock';
+  const lzwCompress = require('../lzwCompress');
 
-    obj1 = getJSONFixture('obj1.json');
+  beforeEach(function () {
+    obj1 = require('./mock/obj1.json');
     obj2 = [
       {},
       {}
@@ -32,7 +32,7 @@ describe('lzwCompress Tests', function () {
         name : 'three'
       }
     ];
-    largeJSON = getJSONFixture('large.json');
+    largeJSON = require('./mock/large.json');
 
     // Uncomment the below line to enable logging
     // lzwCompress.enableLogging(true);
@@ -40,7 +40,7 @@ describe('lzwCompress Tests', function () {
 
   describe('simple types', function () {
 
-    it('should pack and unpack all test cases', function () {
+    it('should pack and unpack all spec cases', function () {
       expect(lzwCompress.unpack(lzwCompress.pack(undefined))).toBeUndefined();
       expect(lzwCompress.unpack(lzwCompress.pack(null))).toBeNull();
       expect(lzwCompress.unpack(lzwCompress.pack(0))).toEqual(0);
@@ -57,7 +57,7 @@ describe('lzwCompress Tests', function () {
   describe('date', function () {
 
     var date = new Date();
-    it('should pack and unpack all test cases', function () {
+    it('should pack and unpack all spec cases', function () {
       expect(lzwCompress.unpack(lzwCompress.pack(date))).toEqual(date);
     });
 
@@ -65,7 +65,7 @@ describe('lzwCompress Tests', function () {
 
   describe('strings', function () {
 
-    it('should pack and unpack all test cases', function () {
+    it('should pack and unpack all spec cases', function () {
       expect(lzwCompress.unpack(lzwCompress.pack('lzwCompress.js'))).toEqual('lzwCompress.js');
       expect(lzwCompress.unpack(lzwCompress.pack('\u2308\u0156asdlmasd;\'"klslmlsd:&%$#@_098*'))).toEqual('\u2308\u0156asdlmasd;\'"klslmlsd:&%$#@_098*');
       expect(lzwCompress.unpack(lzwCompress.pack(JSON.stringify(obj1)))).toEqual(JSON.stringify(obj1));
@@ -86,7 +86,7 @@ describe('lzwCompress Tests', function () {
 
   describe('arrays', function () {
 
-    it('should pack and unpack all test cases', function () {
+    it('should pack and unpack all spec cases', function () {
       expect(lzwCompress.unpack(lzwCompress.pack(array1))).toEqual(array1);
       expect(lzwCompress.unpack(lzwCompress.pack(array2))).toEqual(array2);
       expect(lzwCompress.unpack(lzwCompress.pack(array3))).toEqual(array3);
@@ -97,7 +97,7 @@ describe('lzwCompress Tests', function () {
 
   describe('objects', function () {
 
-    it('should pack and unpack all test cases', function () {
+    it('should pack and unpack all spec cases', function () {
       expect(lzwCompress.unpack(lzwCompress.pack(obj1))).toEqual(obj1);
       expect(lzwCompress.unpack(lzwCompress.pack(obj2))).toEqual(obj2);
       expect(lzwCompress.unpack(lzwCompress.pack(obj3))).toEqual(obj3);
@@ -106,7 +106,7 @@ describe('lzwCompress Tests', function () {
 
   describe('large json', function () {
 
-    it('should pack and unpack all test cases', function () {
+    it('should pack and unpack all spec cases', function () {
       expect(lzwCompress.unpack(lzwCompress.pack(largeJSON))).toEqual(largeJSON);
     });
 

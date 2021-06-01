@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '16'
 
       - name: Cache dependencies
         uses: actions/cache@v2
@@ -27,4 +27,5 @@ jobs:
             ${{ runner.os }}-node-
 
       - run: npm ci
-      - run: npm run test-ci
+      - run: npm run lint
+      - run: npm test

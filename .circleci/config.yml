@@ -15,7 +15,7 @@ jobs:
       - run:
           name: Install Dependencies
           command: |
-            sudo npm install -g grunt-cli codecov
+            sudo npm install -g codecov
       - restore_cache:
           key: node-cache-{{ checksum "package-lock.json" }}
       - run:
@@ -26,8 +26,11 @@ jobs:
           paths:
             - ./node_modules
       - run:
-          name: Run tests
-          command: grunt ci
+          name: Lint
+          command: npm run lint
+      - run:
+          name: Run test
+          command: npm test
       - run:
           name: Push Coverage
           command: codecov

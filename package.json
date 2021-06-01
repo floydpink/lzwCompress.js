@@ -7,12 +7,11 @@
     "test": "test"
   },
   "scripts": {
-    "test": "grunt",
-    "test-ci": "grunt ci"
+    "lint": "jshint --reporter=node_modules/jshint-stylish lzwCompress.js && jshint --reporter=node_modules/jshint-stylish test/lzwCompress.spec.js",
+    "test": "nyc jasmine"
   },
   "files": [
     "package.json",
-    "bower.json",
     "lzwCompress.js",
     "README.md",
     "LICENSE"
@@ -34,19 +33,12 @@
   },
   "homepage": "https://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
-    "grunt": "^1.4.1",
-    "grunt-contrib-jshint": "^3.0.0",
-    "grunt-contrib-watch": "^1.1.0",
-    "grunt-karma": "^4.0.2",
+    "jasmine": "^3.7.0",
+    "jshint": "^2.12.0",
     "jshint-stylish": "^2.2.1",
-    "karma": "^6.3.2",
-    "karma-chrome-launcher": "^3.1.0",
-    "karma-coverage": "^2.0.3",
-    "karma-jasmine": "^4.0.1",
-    "karma-jasmine-jquery": "^0.1.1",
-    "karma-spec-reporter": "0.0.32",
-    "load-grunt-tasks": "^5.1.0",
-    "puppeteer": "^10.0.0",
-    "time-grunt": "^2.0.0"
+    "nyc": "^15.1.0"
+  },
+  "nyc": {
+    "exclude": "**/*.spec.js"
   }
 }
