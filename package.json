@@ -34,7 +34,7 @@
   },
   "homepage": "https://floydpink.github.io/lzwCompress.js/",
   "devDependencies": {
-    "jasmine": "^3.10.0",
+    "jasmine": "^4.0.0",
     "jshint": "^2.13.2",
     "jshint-stylish": "^2.2.1",
     "nyc": "^15.1.0"
